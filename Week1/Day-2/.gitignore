@@ -17,7 +17,5 @@
 .prettierignore
 
 #Avoid adding designs and screenshots
-Week1/Day-2/design/*
+design/*
 
-#Avoid adding .vscode file
-.vscode

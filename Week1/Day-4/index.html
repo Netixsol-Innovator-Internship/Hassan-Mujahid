@@ -35,27 +35,51 @@
         <h1 class="uppercase font-bold text-xl">Ping</h1>
         <p class="text-xl font-bold text-blue-400">.</p>
       </div>
-      <p class="text-3xl text-gray-400 mb-5">
+      <p class="text-2xl md:text-3xl text-gray-400 mb-5">
         We are launching <strong class="text-black">soon!</strong>
       </p>
-      <p class="mb-5">Subscribe and get notified</p>
+      <p class="mb-10">Subscribe and get notified</p>
     </header>
     <!-- Header ends here  -->
 
     <!-- Main Section Starts here -->
-    <main>
-      <div>
-        <img src="" alt="" />
+    <main class="flex flex-col gap-y-16 items-center">
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center w-full justify-center"
+      >
+        <div
+          class="w-[65%] md:w-[28%] flex flex-col justify-center items-center"
+        >
+          <input
+            type="email"
+            class="peer invalid:focus:border-red-500 invalid:border-red-500 focus:outline-none hover:border-blue-200 border-blue-100 placeholder:text-slate-300 placeholder:text-md border-2 py-2 px-8 w-[100%] md:w-[100%] rounded-full"
+            placeholder="Your email address..."
+          />
+
+          <i class="text-red-500 hidden peer-invalid:block"
+            >Please provide a valid email address!</i
+          >
+        </div>
+        <button
+          class="bg-blue-600 w-[65%] md:w-[15%] shadow-lg shadow-blue-200 text-white py-2 px-4 rounded-full"
+        >
+          Notify me
+        </button>
+      </div>
+      <div class="w-[80%] md:w-[50%] lg:w-[32%]">
+        <img class="" src="./images/illustration-dashboard.png" alt="" />
       </div>
     </main>
+
+    <!-- Main Section ends here -->
 
     <footer>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>. Notify Me &copy; Copyright
-        Ping. All rights reserved.
+        >. Coded by <a href="#">Your Name Here</a>.&copy; Copyright Ping. All
+        rights reserved.
       </p>
     </footer>
   </body>

@@ -22,7 +22,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [solution](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week1/Day-5)
-- Live Site URL: [live site](stats-preview-card-solution-by-hassan.netlify.app)
+- Live Site URL: [live site](https://stats-preview-card-solution-by-hassan.netlify.app/)
 
 ### Built with
 
@@ -80,4 +80,4 @@ In this specific project I learned how to play with screen sizes, image sizes an
 
 ## Author
 
-- Website - [Hassan Mujahid](stats-preview-card-solution-by-hassan.netlify.app)
+- Website - [Hassan Mujahid](https://stats-preview-card-solution-by-hassan.netlify.app/)

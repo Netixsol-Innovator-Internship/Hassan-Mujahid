@@ -11,6 +11,10 @@ module.exports = {
         "intro-desktop": "url('../images/bg-intro-desktop.png')",
         "intro-mobile": "url('../images/bg-intro-mobile.png')",
       },
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
     },
   },
   plugins: [],

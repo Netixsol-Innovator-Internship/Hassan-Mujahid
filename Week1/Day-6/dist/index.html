@@ -20,10 +20,18 @@
     <div class="absolute inset-0 bg-modified-red bg-opacity-[75%]"></div>
 
     <!-- Content -->
-    <div class="relative sm:flex-col flew-row">
-      <div class="flex flex-col">
-        <h1>Learn to code by watching others</h1>
-        <p>
+    <div
+      class="relative h-screen w-[80%] box-border mx-auto flex flex-col gap-5 md:flex-row justify-center items-center"
+    >
+      <div class="flex flex-col gap-10 box-border 4xl:pr-10">
+        <h1
+          class="text-white font-bold text-center sm:text-start sm:text-5xl text-4xl md:text-4xl lg:text-6xl xl:text-6xl 2xl:text-8xl 3xl:text-8xl 3xl:pr-20 4xl:text-9xl"
+        >
+          Learn to code by watching others
+        </h1>
+        <p
+          class="text-base text-center text-gray-200 px-5 sm:text-lg sm:px-0 sm:text-start md:text-sm lg:text-xl lg:pr-10 xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 4xl:pr-20 box-border"
+        >
           See how experienced developers solve problems in real-time. Watching
           scripted tutorials is great, but understanding how developers think is
           invaluable.
@@ -32,10 +40,30 @@
       <div>
         <button>Try it free 7 days then $20/mo. thereafter</button>
         <form>
-          <input type="text" name="" id="" placeholder="First Name" />
-          <input type="text" name="" id="" placeholder="Last Name" />
-          <input type="email" name="" id="" placeholder="Email Address" />
-          <input type="password" name="" id="" placeholder="Password" />
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="First Name"
+          />
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Last Name"
+          />
+          <input
+            type="email"
+            name="emailAddress"
+            id="emailAddress"
+            placeholder="Email Address"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
           <button>Claim your free trial</button>
         </form>
         <p>
@@ -44,7 +72,6 @@
         </p>
       </div>
     </div>
-
     <!-- Footer -->
 
     <!-- <footer class="relative z-30">

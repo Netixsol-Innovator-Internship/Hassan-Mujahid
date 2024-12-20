@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         "desired-red": "hsl(0, 100%, 74%)",
         "modified-red": "hsl(0, 97%, 70%)",
+        "desired-blue": "hsl(248, 32%, 49%)",
+        "desired-green": "hsl(154, 59%, 51%)",
       },
       backgroundImage: {
         "intro-desktop": "url('../images/bg-intro-desktop.png')",

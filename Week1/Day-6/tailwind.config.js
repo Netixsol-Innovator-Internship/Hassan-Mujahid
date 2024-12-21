@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./dist/index.html"],
+  content: ["./index.html"],
   theme: {
     extend: {
       colors: {
@@ -10,8 +10,8 @@ module.exports = {
         "desired-green": "hsl(154, 59%, 51%)",
       },
       backgroundImage: {
-        "intro-desktop": "url('../images/bg-intro-desktop.png')",
-        "intro-mobile": "url('../images/bg-intro-mobile.png')",
+        "intro-desktop": "url('/images/bg-intro-desktop.png')",
+        "intro-mobile": "url('/images/bg-intro-mobile.png')",
       },
       screens: {
         "3xl": "1920px",

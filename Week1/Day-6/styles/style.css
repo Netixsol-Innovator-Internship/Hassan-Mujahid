@@ -686,7 +686,7 @@ video {
 }
 
 .bg-intro-mobile {
-  background-image: url('../images/bg-intro-mobile.png');
+  background-image: url('/images/bg-intro-mobile.png');
 }
 
 .bg-cover {
@@ -838,7 +838,7 @@ video {
 
 @media (min-width: 768px) {
   .md\:bg-intro-desktop {
-    background-image: url('../images/bg-intro-desktop.png');
+    background-image: url('/images/bg-intro-desktop.png');
   }
 
   .md\:px-14 {

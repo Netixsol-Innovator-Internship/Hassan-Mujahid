@@ -32,12 +32,14 @@
           <div class="flex flex-col gap-2 w-full">
             <label
               for="day"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Day</label
             >
             <input
-              class="border-2 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg sm:placeholder:text-2xl md:placeholder:text-3xl lg:placeholder:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
+              min="0"
+              max="31"
               name="day"
               id="day"
               placeholder="DD"
@@ -46,30 +48,31 @@
           <div class="flex flex-col gap-2 w-full">
             <label
               for="month"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Month</label
             >
             <input
-              class="border-2 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg s sm:placeholder:text-2xl md:placeholder:text-3xl lg:placeholder:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
               name="month"
               id="month"
               placeholder="MM"
               min="0"
-              max="0"
+              max="11"
             />
           </div>
           <div class="flex flex-col gap-2 w-full">
             <label
               for="years"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Year</label
             >
             <input
-              class="border-2 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg s sm:placeholder:text-2xl md:placeholder:text-3xl lg:placeholder:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
               name="years"
               id="years"
+              max="2024"
               placeholder="YYYY"
             />
           </div>
@@ -80,7 +83,7 @@
           ></div>
           <button
             type="submit"
-            class="bg-violet-600 p-4 lg:p-4 absolute left-1/2 transform -translate-x-1/2 lg:static rounded-full"
+            class="bg-violet-600 active:bg-black p-4 lg:p-4 absolute left-1/2 transform -translate-x-1/2 lg:static rounded-full"
           >
             <img
               src="./assets/images/icon-arrow.svg"

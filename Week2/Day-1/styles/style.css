@@ -888,6 +888,11 @@ video {
   line-height: 1;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -990,6 +995,41 @@ video {
   color: rgb(148 163 184 / var(--tw-text-opacity, 1));
 }
 
+.focus\:border-slate-700:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(51 65 85 / var(--tw-border-opacity, 1));
+}
+
+.focus\:border-violet-600:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(124 58 237 / var(--tw-border-opacity, 1));
+}
+
+.focus\:border-violet-500:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(139 92 246 / var(--tw-border-opacity, 1));
+}
+
+.focus\:border-violet-400:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(167 139 250 / var(--tw-border-opacity, 1));
+}
+
+.focus\:border-violet-300:focus {
+  --tw-border-opacity: 1;
+  border-color: rgb(196 181 253 / var(--tw-border-opacity, 1));
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.active\:bg-black:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
+}
+
 @media (min-width: 640px) {
   .sm\:gap-2 {
     gap: 0.5rem;
@@ -1007,6 +1047,11 @@ video {
   .sm\:text-xs {
     font-size: 0.75rem;
     line-height: 1rem;
+  }
+
+  .sm\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 
   .sm\:placeholder\:text-xl::-moz-placeholder {
@@ -1063,6 +1108,11 @@ video {
     line-height: 1;
   }
 
+  .md\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .md\:placeholder\:text-3xl::-moz-placeholder {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -1101,6 +1151,22 @@ video {
     width: auto;
   }
 
+  .lg\:w-\[90\%\] {
+    width: 90%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:w-\[95\%\] {
+    width: 95%;
+  }
+
+  .lg\:w-\[100\%\] {
+    width: 100%;
+  }
+
   .lg\:items-center {
     align-items: center;
   }
@@ -1127,6 +1193,16 @@ video {
     line-height: 1.25rem;
   }
 
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
   .lg\:placeholder\:text-2xl::-moz-placeholder {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1135,5 +1211,22 @@ video {
   .lg\:placeholder\:text-2xl::placeholder {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+
+  .lg\:placeholder\:text-xl::-moz-placeholder {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:placeholder\:text-xl::placeholder {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }

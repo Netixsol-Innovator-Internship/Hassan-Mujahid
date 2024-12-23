@@ -18,6 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./script.js"></script>
 
     <title>Frontend Mentor | Age calculator app</title>
   </head>
@@ -25,56 +26,63 @@
     class="h-screen bg-gray-200 flex justify-center items-start lg:items-center"
   >
     <div
-      class="bg-white mt-20 lg:mt-0 w-[90%] lg:w-auto box-border rounded-t-2xl rounded-bl-2xl rounded-br-[9rem] md:rounded-br-[12rem] p-10"
+      class="bg-white mt-20 lg:mt-0 w-[90%] lg:w-[55%] 2xl:w-[45%] 3xl:w-[35%] 4xl:w-[28%] box-border rounded-t-2xl rounded-bl-2xl rounded-br-[9rem] md:rounded-br-[12rem] p-10"
     >
-      <form>
-        <div class="flex gap-4 lg:gap-0 lg:w-[80%]">
+      <form class="form">
+        <div class="flex gap-4 lg:gap-0 lg:w-[80%] xl:w-[70%]">
           <div class="flex flex-col gap-2 w-full">
             <label
               for="day"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase day-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Day</label
             >
             <input
-              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 day-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
-              min="0"
-              max="31"
               name="day"
               id="day"
               placeholder="DD"
+              required
             />
+            <span class="italic hidden date-invalid text-red-500 text-sm"
+              >Must be a valid date
+            </span>
           </div>
           <div class="flex flex-col gap-2 w-full">
             <label
               for="month"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase month-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Month</label
             >
             <input
-              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 month-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
               name="month"
               id="month"
               placeholder="MM"
-              min="0"
-              max="11"
+              required
             />
+            <span class="italic hidden month-invalid text-red-500 text-sm">
+              Must be a valid month</span
+            >
           </div>
           <div class="flex flex-col gap-2 w-full">
             <label
               for="years"
-              class="uppercase test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase year-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
               >Year</label
             >
             <input
-              class="border-2 font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:p-4 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-xl lg:text-xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 year-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
               type="number"
               name="years"
               id="years"
-              max="2024"
               placeholder="YYYY"
+              required
             />
+            <span class="italic hidden year-invalid text-red-500 text-sm"
+              >Must be in the past</span
+            >
           </div>
         </div>
         <div class="flex items-center my-16 lg:my-0">
@@ -94,16 +102,19 @@
         </div>
       </form>
       <div
-        class="text-5xl sm:text-6xl md:text-8xl lg:text-7xl font-extrabold flex flex-col sm:gap-2 md:gap-4 lg:gap-2 font-['Poppins']"
+        class="text-5xl sm:text-6xl md:text-8xl lg:text-6xl xl:text-7xl font-extrabold flex flex-col sm:gap-2 md:gap-4 lg:gap-2 font-['Poppins']"
       >
         <p class="italic">
-          <span class="tracking-widest text-violet-600">--</span> years
+          <span class="tracking-widest output-years text-violet-600">--</span>
+          years
         </p>
         <p class="italic">
-          <span class="tracking-widest text-violet-600">--</span> months
+          <span class="tracking-widest output-months text-violet-600">--</span>
+          months
         </p>
         <p class="italic">
-          <span class="tracking-widest text-violet-600">--</span> days
+          <span class="tracking-widest output-days text-violet-600">--</span>
+          days
         </p>
       </div>
     </div>

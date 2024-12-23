@@ -23,21 +23,23 @@
     <title>Frontend Mentor | Age calculator app</title>
   </head>
   <body
-    class="h-screen bg-gray-200 flex justify-center items-start lg:items-center"
+    class="h-screen font-['Poppins'] bg-gray-200 flex justify-center items-start md:items-center"
   >
     <div
-      class="bg-white mt-20 lg:mt-0 w-[90%] lg:w-[55%] 2xl:w-[45%] 3xl:w-[35%] 4xl:w-[28%] box-border rounded-t-2xl rounded-bl-2xl rounded-br-[9rem] md:rounded-br-[12rem] p-10"
+      class="bg-white mt-20 md:mt-0 w-[90%] lg:w-[75%] 2xl:w-[65%] 3xl:w-[53%] 4xl:w-[38%] box-border rounded-t-2xl rounded-bl-2xl rounded-br-[5rem] md:rounded-br-[12rem] px-5 py-10 md:px-10 md:py-14 lg:p-16"
     >
       <form class="form">
-        <div class="flex gap-4 lg:gap-0 lg:w-[80%] xl:w-[70%]">
-          <div class="flex flex-col gap-2 w-full">
+        <div
+          class="flex gap-4 lg:gap-0 xl:gap-10 sm:pl-7 sm:pr-5 md:px-0 md:w-[80%] lg:w-[85%] xl:w-[80%]"
+        >
+          <div class="flex flex-col gap-1 w-full">
             <label
               for="day"
-              class="uppercase day-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase day-label text-xs sm:text-lg md:text-base lg:text-lg 2xl:text-xl tracking-[0.2rem] text-gray-500 font-bold"
               >Day</label
             >
             <input
-              class="border-2 day-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 day-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 py-2 px-3 sm:px-4 sm:py-6 md:p-6 lg:pr-5 lg:pl-6 lg:py-5 xl:pr-7 xl:pl-8 xl:py-7 rounded-lg sm:rounded-xl placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-3xl sm:text-3xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-3xl lg:text-3xl xl:placeholder:text-4xl xl:text-4xl placeholder:font-bold w-full sm:w-[90%] lg:w-[80%] xl:w-[100%]"
               type="number"
               name="day"
               id="day"
@@ -48,14 +50,14 @@
               >Must be a valid date
             </span>
           </div>
-          <div class="flex flex-col gap-2 w-full">
+          <div class="flex flex-col gap-1 w-full">
             <label
               for="month"
-              class="uppercase month-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase month-label text-xs sm:text-lg md:text-base lg:text-lg 2xl:text-xl tracking-[0.2rem] text-gray-500 font-bold"
               >Month</label
             >
             <input
-              class="border-2 month-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 month-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 py-2 px-3 sm:px-4 sm:py-6 md:p-6 lg:pr-5 lg:pl-6 lg:py-5 xl:pr-7 xl:pl-8 xl:py-7 rounded-lg sm:rounded-xl placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-3xl sm:text-3xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-3xl lg:text-3xl xl:placeholder:text-4xl xl:text-4xl placeholder:font-bold w-full sm:w-[90%] lg:w-[80%] xl:w-[100%]"
               type="number"
               name="month"
               id="month"
@@ -66,14 +68,14 @@
               Must be a valid month</span
             >
           </div>
-          <div class="flex flex-col gap-2 w-full">
+          <div class="flex flex-col gap-1 w-full">
             <label
               for="years"
-              class="uppercase year-label test-xs sm:text-xs md:text-base lg:text-sm 2xl:text-base tracking-[0.2rem] text-gray-500 font-bold"
+              class="uppercase year-label text-xs sm:text-lg md:text-base lg:text-lg 2xl:text-xl tracking-[0.2rem] text-gray-500 font-bold"
               >Year</label
             >
             <input
-              class="border-2 year-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 p-4 sm:p-4 md:p-6 lg:pr-3 lg:pl-3 lg:py-2 rounded-lg placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-2xl sm:text-2xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-2xl lg:text-2xl placeholder:font-bold w-full lg:w-[80%]"
+              class="border-2 year-input font-bold focus:outline-none focus:border-violet-400 border-gray-200 py-2 px-3 sm:px-4 sm:py-6 md:p-6 lg:pr-5 lg:pl-6 lg:py-5 xl:pr-7 xl:pl-8 xl:py-7 rounded-lg sm:rounded-xl placeholder:text-slate-500 placeholder:text-lg text-lg sm:placeholder:text-3xl sm:text-3xl md:placeholder:text-3xl md:text-3xl lg:placeholder:text-3xl lg:text-3xl xl:placeholder:text-4xl xl:text-4xl placeholder:font-bold w-full sm:w-[90%] lg:w-[80%] xl:w-[100%]"
               type="number"
               name="years"
               id="years"
@@ -81,40 +83,40 @@
               required
             />
             <span class="italic hidden year-invalid text-red-500 text-sm"
-              >Must be in the past</span
+              >Must be a valid year to calculate age</span
             >
           </div>
         </div>
-        <div class="flex items-center my-16 lg:my-0">
+        <div class="flex items-center my-16 md:my-0 lg:my-4 xl:my-8 lg:w-full">
           <div
-            class="w-full relative lg:static border-b-2 border-gray-200"
+            class="w-full relative md:static border-b-2 border-gray-200"
           ></div>
           <button
             type="submit"
-            class="bg-violet-600 active:bg-black p-4 lg:p-4 absolute left-1/2 transform -translate-x-1/2 lg:static rounded-full"
+            class="bg-violet-600 active:bg-black p-4 sm:p-6 lg:px-7 lg:py-6 absolute md:static left-1/2 transform -translate-x-1/2 md:-translate-x-0 rounded-full"
           >
             <img
               src="./assets/images/icon-arrow.svg"
-              class="size-7 lg:size-8"
+              class="size-7 sm:size-10 lg:size-14"
               alt="icon-arrow"
             />
           </button>
         </div>
       </form>
       <div
-        class="text-5xl sm:text-6xl md:text-8xl lg:text-6xl xl:text-7xl font-extrabold flex flex-col sm:gap-2 md:gap-4 lg:gap-2 font-['Poppins']"
+        class="text-5xl mob:text-6xl sm:text-8xl md:text-8xl lg:text-8xl xl:text-9xl font-extrabold flex flex-col sm:gap-2 md:gap-4 lg:gap-2 font-['Poppins']"
       >
-        <p class="italic">
+        <p class="italic flex gap-0 mob:gap-2 tracking-tight">
           <span class="tracking-widest output-years text-violet-600">--</span>
-          years
+          <span> years </span>
         </p>
-        <p class="italic">
+        <p class="italic flex gap-0 lg:gap-2 mob:gap-2 tracking-tight">
           <span class="tracking-widest output-months text-violet-600">--</span>
-          months
+          <span> months </span>
         </p>
-        <p class="italic">
+        <p class="italic flex gap-0 lg:gap-2 mob:gap-2 tracking-tight">
           <span class="tracking-widest output-days text-violet-600">--</span>
-          days
+          <span> days </span>
         </p>
       </div>
     </div>

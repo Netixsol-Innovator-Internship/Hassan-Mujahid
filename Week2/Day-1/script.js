@@ -21,6 +21,7 @@ const isValidDate = (day, month, year) => {
   return (
     date.getFullYear() === +year &&
     date.getFullYear() <= currentDate.getFullYear() &&
+    date.getFullYear() > 0 &&
     date.getMonth() === +month &&
     date.getDate() === +day
   );
@@ -66,10 +67,16 @@ form.addEventListener("submit", (e) => {
   dayInput.classList.remove("focus:border-red-500", "border-red-500");
   monthInput.classList.remove("focus:border-red-500", "border-red-500");
   yearInput.classList.remove("focus:border-red-500", "border-red-500");
+  dayLabel.classList.remove("text-red-500");
+  monthLabel.classList.remove("text-red-500");
+  yearLabel.classList.remove("text-red-500");
 
   dayInput.classList.add("focus:border-violet-400", "border-gray-200");
   monthInput.classList.add("focus:border-violet-400", "border-gray-200");
   yearInput.classList.add("focus:border-violet-400", "border-gray-200");
+  dayLabel.classList.add("text-gray-500");
+  monthLabel.classList.add("text-gray-500");
+  yearLabel.classList.add("text-gray-500");
 
   yearInvalid.classList.add("hidden");
   monthInvalid.classList.add("hidden");
@@ -89,6 +96,7 @@ form.addEventListener("submit", (e) => {
     monthInputValue,
     yearInputValue
   );
+
   console.log("isValid", isInputValid);
   if (isInputValid) {
     const checkingAge = checkAge(
@@ -103,24 +111,28 @@ form.addEventListener("submit", (e) => {
     dayInput.classList.add("focus:border-red-500", "border-red-500");
     monthInput.classList.add("focus:border-red-500", "border-red-500");
     yearInput.classList.add("focus:border-red-500", "border-red-500");
+    dayLabel.classList.add("text-red-500");
+    monthLabel.classList.add("text-red-500");
+    yearLabel.classList.add("text-red-500");
 
     dayInput.classList.remove("focus:border-violet-400", "border-gray-200");
     monthInput.classList.remove("focus:border-violet-400", "border-gray-200");
     yearInput.classList.remove("focus:border-violet-400", "border-gray-200");
+    dayLabel.classList.remove("text-gray-500");
+    monthLabel.classList.remove("text-gray-500");
+    yearLabel.classList.remove("text-gray-500");
     console.log(dayInputValue, monthInputValue, yearInputValue);
-    if (yearInputValue > currentDate.getFullYear()) {
+
+    if (yearInputValue > currentDate.getFullYear() || +yearInputValue <= 0) {
       yearInvalid.classList.remove("hidden");
     }
 
-    if (+monthInputValue === 0 || +monthInputValue > 11) {
+    if (+monthInputValue <= 0 || +monthInputValue > 11) {
       monthInvalid.classList.remove("hidden");
     }
 
-    if (+dayInputValue === 0 || +dayInputValue > inputDateMonthlyDays) {
+    if (+dayInputValue <= 0 || +dayInputValue > inputDateMonthlyDays) {
       dayInvalid.classList.remove("hidden");
     }
   }
 });
-
-console.log(yearInvalid);
-console.log(monthInvalid);

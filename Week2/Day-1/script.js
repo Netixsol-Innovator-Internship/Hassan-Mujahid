@@ -28,7 +28,7 @@ const isValidDate = (day, month, year) => {
 };
 
 const checkAge = (day, month, year) => {
-  const inputDate = new Date(year, month - 1, day);
+  const inputDate = new Date(year, month, day);
   const currentDate = new Date();
 
   const inputDay = inputDate.getDate();

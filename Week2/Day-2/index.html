@@ -1,51 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Notifications page</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  Notifications 3
+    <title>Frontend Mentor | Notifications page</title>
 
-  Mark all as read
+    <style>
+      .custom-scrollbar::-webkit-scrollbar {
+            width: 16px !important; /* Adjust width of the scrollbar */
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #e5e7eb !important; /* Light gray background */
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #6b7280; /* Darker gray thumb */
+            border-radius: 4px !important; /* Rounded corners */
+        }
 
-  Mark Webber reacted to your recent post My first tournament today!
-  1m ago
+        /* Hide scrollbar but allow scrolling */
+        .no-scrollbar::-webkit-scrollbar {
+          display: none; /* For Chrome, Safari, and Opera */ 
+        }
 
-  Angela Gray followed you
-  5m ago
+        .no-scrollbar {
+          -ms-overflow-style: none; /* For Internet Explorer and Edge */
+          scrollbar-width: none; /* For Firefox */
+        }
 
-  Jacob Thompson has joined your group Chess Club
-  1 day ago
+    </style>
+    
+  </head>
+  <body class="h-screen md:bg-desired-light-blue font-jakarta">
+    <div class="flex justify-center md:min-h-screen items-center">
+      <div class="flex flex-col lg:gap-4 w-[90%] md:w-[80%] md:h-[65vh] lg:w-[60%] lg:h-auto xl:h-[70vh] 2xl:h-[80vh] 4xl:w-[50%]  md:overflow-y-auto custom-scrollbar md:bg-white md:rounded-xl  md:p-5 lg:px-10">
+        <div class="flex justify-between items-center mt-5">
+          <span class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl flex items-center enter gap-2">
+            Notifications
+            <span
+              class="bg-desired-blue text-white py-[0.12rem] px-[0.65rem] rounded-md text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl"
+              >3</span
+            >
+          </span>
+          <button class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 hover:text-desired-blue active:text-desired-blue">Mark all as read</button>
+        </div>
+        <div class="flex flex-col gap-3 mt-5">
+          <div
+            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+          >
+            <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-mark-webber.webp"
+              alt=""
+            />
+            <div class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4 ">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Mark Webber </span>
+              <span class="text-gray-500 font-semibold">
+                reacted to your recent post
+              </span>
+              <span class="font-bold text-gray-600 hover:text-desired-blue hover:cursor-pointer ml-1"
+                >My first tournament today!</span
+              >
+              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle"></span>
+              
+              <div class="font-semibold text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                1m ago
+              </div>
+             
+            </div>
+          </div>
+          <div
+            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+          >
+            <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-angela-gray.webp"
+              alt=""
+            />
+            <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Angela Gray </span>
+              <span class="text-gray-500 font-semibold"> followed you </span>
+              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle"></span>
+              <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                5m ago
+              </div>
+            </span>
+          </div>
+          <div
+            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+          >
+            <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-jacob-thompson.webp"
+              alt=""
+            />
+            <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Jacob Thompson </span>
+              <span class="text-gray-500 font-semibold">
+                has joined your group
+              </span>
+              <span class="font-bold text-desired-blue ml-1 hover:cursor-pointer">Chess Club</span>
+              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle self-center"></span>
+              <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                1 day ago
+              </div>
+            </span>
+          </div>
+          <div class="py-3 pl-4 pr-6 flex flex-col gap-2 rounded-lg">
+            <div class="flex gap-2">
+              <img
+                class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+                src="./assets/images/avatar-rizky-hasanuddin.webp"
+                alt=""
+              />
+              <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+                <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer">Rizky Hasanuddin </span>
+                <span class="text-gray-500 font-semibold">
+                  sent you a private message
+                </span>
+                <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                  5 days ago
+                </div>
+              </span>
+            </div>
+            <div class="flex justify-end">
+              <div
+                class="border-[1px] w-[80%] text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl pl-3 pr-5 py-4 border-gray-300 hover:bg-desired-light-blue hover:cursor-pointer rounded-md"
+              >
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </div>
+            </div>
+          </div>
+          <div class="py-3 pl-4 pr-6 flex justify-between gap-2 rounded-lg">
+            <div class="flex gap-2 pr-4">
 
-  Rizky Hasanuddin sent you a private message
-  5 days ago
-  Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-  I'm already having lots of fun and improving my game.
+              <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-kimberly-smith.webp"
+              alt=""
+            />
+            <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Kimberly Smith </span>
+              <span class="text-gray-500 font-semibold">
+                commented on your picture
+              </span>
+              <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                1 week ago
+              </div>
+            </div>
+              <img
+                class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20 hover:cursor-pointer hover:shadow-[0px_1px_5px_#072968]"
+                src="./assets/images/image-chess.webp"
+                alt=""
+              />
+            </span>
+          </div>
+          <div class="py-3 pl-4 pr-6 flex gap-2 rounded-lg">
+            <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-nathan-peterson.webp"
+              alt=""
+            />
+            <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Nathan Peterson </span>
+              <span class="text-gray-500 font-semibold">
+                reacted to your recent post
+              </span>
+              <span class="font-bold text-gray-600 ml-1">
+                5 end-game strategies to increase your win rate</span
+              >
+              <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
+                2 weeks ago
+              </div>
+            </span>
+          </div>
+          <div class="py-3 pl-4 pr-6 flex gap-2 rounded-lg">
+            <img
+              class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
+              src="./assets/images/avatar-anna-kim.webp"
+              alt=""
+            />
+            <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
+              <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Anna Kim </span>
+              <span class="text-gray-500 font-semibold"> left the group </span>
+              <span class="font-bold text-desired-blue ml-1 hover:cursor-pointer">Chess Club</span>
+              <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl ">
+                2 weeks ago
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Kimberly Smith commented on your picture
-  1 week ago
-
-  Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
-  2 weeks ago
-
-  Anna Kim left the group Chess Club
-  2 weeks ago
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
 </html>

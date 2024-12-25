@@ -20,6 +20,8 @@
       rel="stylesheet"
     />
 
+    <script src="./script.js"></script>
+
     <title>Frontend Mentor | Notifications page</title>
 
     <style>
@@ -34,16 +36,6 @@
             border-radius: 4px !important; /* Rounded corners */
         }
 
-        /* Hide scrollbar but allow scrolling */
-        .no-scrollbar::-webkit-scrollbar {
-          display: none; /* For Chrome, Safari, and Opera */ 
-        }
-
-        .no-scrollbar {
-          -ms-overflow-style: none; /* For Internet Explorer and Edge */
-          scrollbar-width: none; /* For Firefox */
-        }
-
     </style>
     
   </head>
@@ -54,15 +46,15 @@
           <span class="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl flex items-center enter gap-2">
             Notifications
             <span
-              class="bg-desired-blue text-white py-[0.12rem] px-[0.65rem] rounded-md text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl"
+              class="bg-desired-blue notification-count text-white py-[0.12rem] px-[0.65rem] rounded-md text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl"
               >3</span
             >
           </span>
-          <button class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 hover:text-desired-blue active:text-desired-blue">Mark all as read</button>
+          <button class="text-sm read-button sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl text-gray-600 hover:text-desired-blue active:text-desired-blue">Mark all as read</button>
         </div>
         <div class="flex flex-col gap-3 mt-5">
           <div
-            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+            class="bg-desired-light-blue new-notification py-3 pl-4 pr-6 flex gap-2 rounded-lg"
           >
             <img
               class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
@@ -77,7 +69,7 @@
               <span class="font-bold text-gray-600 hover:text-desired-blue hover:cursor-pointer ml-1"
                 >My first tournament today!</span
               >
-              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle"></span>
+              <span class="inline-block h-2 w-2 bg-red-500 red-dot rounded-full ml-1 align-middle"></span>
               
               <div class="font-semibold text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
                 1m ago
@@ -86,7 +78,7 @@
             </div>
           </div>
           <div
-            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+            class="bg-desired-light-blue new-notification py-3 pl-4 pr-6 flex gap-2 rounded-lg"
           >
             <img
               class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
@@ -96,14 +88,14 @@
             <span class="text-sm sm:text-base md:text-lg lg:text-xl xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl leading-4">
               <span class="font-bold mr-[0.15rem] hover:text-desired-blue hover:cursor-pointer"> Angela Gray </span>
               <span class="text-gray-500 font-semibold"> followed you </span>
-              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle"></span>
+              <span class="inline-block h-2 w-2 red-dot bg-red-500 rounded-full ml-1 align-middle"></span>
               <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
                 5m ago
               </div>
             </span>
           </div>
           <div
-            class="bg-desired-light-blue py-3 pl-4 pr-6 flex gap-2 rounded-lg"
+            class="bg-desired-light-blue new-notification py-3 pl-4 pr-6 flex gap-2 rounded-lg"
           >
             <img
               class="size-8 sm:size-10 md:size-12 lg:size-14 xl:size-12 2xl:size-14 3xl:size-16 4xl:start-20"
@@ -116,7 +108,7 @@
                 has joined your group
               </span>
               <span class="font-bold text-desired-blue ml-1 hover:cursor-pointer">Chess Club</span>
-              <span class="inline-block h-2 w-2 bg-red-500 rounded-full ml-1 align-middle self-center"></span>
+              <span class="inline-block h-2 w-2 red-dot bg-red-500 rounded-full ml-1 align-middle self-center"></span>
               <div class="font-semibold mt-[0.15rem] text-gray-400 text-sm sm:text-base md:text-lg lg:text-xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl">
                 1 day ago
               </div>

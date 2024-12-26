@@ -19,6 +19,8 @@
       rel="stylesheet"
     />
 
+    <script src="./script.js"></script>
+
     <title>Frontend Mentor | Interactive rating component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -42,7 +44,7 @@
         class="w-[90%] sm:w-[80%] md:w-[67%] lg:w-[51%] xl:w-[30%] 2xl:w-[30%] 3xl:w-[27%] 4xl:w-[25%] bg-desired-dark-blue rounded-2xl sm:rounded-[2rem] md:rounded-[3rem] xl:rounded-3xl 2xl:rounded-[2rem] py-8 px-7 sm:px-10 sm:py-14 md:px-12 xl:py-10 xl:px-7 2xl:py-12 2xl:px-10 3xl:py-14 3xl:px-11 4xl:py-20 4xl:px-12"
       >
         <!-- Rating state start -->
-        <div class="hidden">
+        <div class="rating-card">
           <div
             class="p-3 sm:p-5 md:p-6 xl:p-3 2xl:p-4 2xl:mb-5 3xl:p-5 4xl:p-6 rounded-full bg-gray-700 inline-block"
           >
@@ -67,38 +69,41 @@
             class="flex justify-between my-7 sm:my-10 xl:my-7 2xl:my-9 3xl:my-11 4xl:my-13"
           >
             <button
-              class="bg-gray-700 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-7 md:py-5 md:px-8 xl:py-3 xl:px-5 2xl:py-4 2xl:px-7 3xl:py-5 3xl:px-8 4xl:py-6 4xl:px-9 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
+              class="bg-gray-700 button-value-1 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-7 md:py-5 md:px-8 xl:py-3 xl:px-5 2xl:py-4 2xl:px-7 3xl:py-5 3xl:px-8 4xl:py-6 4xl:px-9 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
               value="1"
             >
               1
             </button>
             <button
-              class="bg-gray-700 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
+              class="bg-gray-700 button-value-2 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
               value="2"
             >
               2
             </button>
             <button
-              class="bg-gray-700 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
+              class="bg-gray-700 button-value-3 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
               value="3"
             >
               3
             </button>
             <button
-              class="bg-gray-700 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
+              class="bg-gray-700 button-value-4 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
               value="4"
             >
               4
             </button>
             <button
-              class="bg-gray-700 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
+              class="bg-gray-700 button-value-5 text-desired-light-grey py-3 px-5 text-[15px] sm:py-4 sm:px-6 md:py-5 md:px-7 xl:py-3 xl:px-5 2xl:py-4 2xl:px-6 3xl:py-5 3xl:px-7 4xl:py-6 4xl:px-8 sm:text-2xl md:text-[1.7rem] xl:text-base 2xl:text-xl 3xl:text-2xl 4xl:text-3xl font-semibold rounded-full hover:bg-desired-orange hover:text-desired-darkest-blue active:bg-white active:text-desired-darket-blue"
               value="5"
             >
               5
             </button>
           </div>
+          <div class="text-red-500 error-message hidden text-center mb-5">
+            Please select any one of the above
+          </div>
           <button
-            class="w-full py-3 sm:py-6 xl:py-3 2xl:py-4 3xl:py-5 5xl:py-6 text-base sm:text-2xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-bold text-desired-darkest-blue rounded-full tracking-widest uppercase font-sans bg-desired-orange active:bg-white hover:bg-white"
+            class="w-full submit-button py-3 sm:py-6 xl:py-3 2xl:py-4 3xl:py-5 5xl:py-6 text-base sm:text-2xl xl:text-base 2xl:text-lg 3xl:text-xl 4xl:text-2xl font-bold text-desired-darkest-blue rounded-full tracking-widest uppercase font-sans bg-desired-orange active:bg-white hover:bg-white"
           >
             Submit
           </button>
@@ -107,7 +112,9 @@
         <!-- Rating state end -->
 
         <!-- Thank you state start -->
-        <div class="flex flex-col items-center justify-center">
+        <div
+          class="flex hidden thank-you-card flex-col items-center justify-center"
+        >
           <img
             class="2xl:w-48 3xl:w-60 4xl:w-72 h-auto object-contain"
             src="./images/illustration-thank-you.svg"
@@ -117,7 +124,7 @@
             <div
               class="text-desired-light-orange text-sm sm:text-base md:text-lg xl:text-sm 2xl:text-lg 3xl:text-xl 4xl:text-2xl py-[0.35rem] px-5 sm:py-2 sm:px-6 md:py-2 md:px-7 xl:py-[0.35rem] xl:px-5 2xl:py-2 2xl:px-7 3xl:py-2 3xl:px-7"
             >
-              You selected <span>4</span> out of 5
+              You selected <span class="rating-output">4</span> out of 5
             </div>
           </div>
           <div

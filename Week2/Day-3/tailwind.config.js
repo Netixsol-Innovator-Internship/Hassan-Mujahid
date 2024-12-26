@@ -20,5 +20,6 @@ module.exports = {
       },
     },
   },
+  safelist: ["text-desired-darkest-blue", "bg-white"],
   plugins: [],
 };

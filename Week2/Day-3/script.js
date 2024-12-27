@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rating) {
       ratingCard.classList.add("hidden");
       ThankYouCard.classList.remove("hidden");
+      ThankYouCard.classList.add("flex");
       ratingOutput.textContent = rating;
     } else {
       errorMessage.classList.remove("hidden");

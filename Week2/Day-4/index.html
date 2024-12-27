@@ -12,13 +12,50 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
-  <body>
-    Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
-    person Total / person Reset
-
+  <body class="font-spaceMono bg-desired-light-gray-cyan">
+    <div class="flex flex-col h-screen items-center">
+      <h1
+        class="uppercase flex flex-col tracking-[0.5rem] text-desired-dark-grayish-cyan font-bold text-xl py-10"
+      >
+        <span>Spli</span><span>tter</span>
+      </h1>
+      <div class="bg-white w-full p-7 rounded-3xl">
+        <!-- <div>Bill</div> -->
+        <div class="w-64">
+          <label
+            class="block text-sm font-spaceMono text-gray-700 mb-1"
+            for="bill"
+          >
+            Bill
+          </label>
+          <div
+            class="flex items-center relative bg-blue-50 rounded-lg shadow-sm px-3 py-2"
+          >
+            <span class="absolute text-gray-500">$</span>
+            <input
+              id="bill"
+              type="text"
+              placeholder="142.55"
+              class="w-full bg-transparent text-right text-teal-800 font-bold outline-none"
+            />
+          </div>
+        </div>
+        <div>Select Tip %</div>
+        <div>5% 10% 15% 25% 50% Custom</div>
+        <div>Number of People</div>
+        <div>Tip Amount / person</div>
+        <div>Total / person Reset</div>
+      </div>
+    </div>
     <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

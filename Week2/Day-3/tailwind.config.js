@@ -12,6 +12,7 @@ module.exports = {
         "desired-light-grey": "hsl(217, 12%, 63%)",
         "desired-dark-grey": "hsl(215, 18%, 19%)",
         "desired-dark-blue": "hsl(213, 19%, 18%)",
+        "desired-md-dark-blue": "hsl(220, 19%, 16%)",
         "desired-darkest-blue": "hsl(216, 12%, 8%)",
       },
       screens: {

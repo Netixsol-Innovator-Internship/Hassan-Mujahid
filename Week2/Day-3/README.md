@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week2/Day-3)
-- Live Site URL: [Add live site URL here](https://interactive-rating-solution-by-hassan.netlify.app/)
+- Solution URL: [Solution](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week2/Day-3)
+- Live Site URL: [Live-site](https://interactive-rating-solution-by-hassan.netlify.app/)
 
 ### Built with
 

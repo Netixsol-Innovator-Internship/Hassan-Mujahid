@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.classList.add("hidden");
     });
     notificationCount.textContent = 0;
+    readButton.disabled = true;
   }
 
   readButton.addEventListener("click", unreadNotificaitions);

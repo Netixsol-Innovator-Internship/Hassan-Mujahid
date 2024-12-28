@@ -22,38 +22,76 @@
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
   <body class="font-spaceMono bg-desired-light-gray-cyan">
-    <div class="flex flex-col h-screen items-center">
+    <div class="flex flex-col items-center">
       <h1
         class="uppercase flex flex-col tracking-[0.5rem] text-desired-dark-grayish-cyan font-bold text-xl py-10"
       >
         <span>Spli</span><span>tter</span>
       </h1>
-      <div class="bg-white w-full p-7 rounded-3xl">
+      <div class="flex flex-col items-center bg-white w-screen p-7 rounded-3xl">
         <!-- <div>Bill</div> -->
-        <div class="w-64">
+        <div class="w-full box-border">
           <label
-            class="block text-sm font-spaceMono text-gray-700 mb-1"
+            class="block text-sm font-spaceMono text-gray-500 mb-1 font-bold"
             for="bill"
           >
             Bill
           </label>
-          <div
-            class="flex items-center relative bg-blue-50 rounded-lg shadow-sm px-3 py-2"
-          >
-            <span class="absolute text-gray-500">$</span>
+          <div class="relative">
+            <span
+              class="absolute text-xl text-gray-400 transform translate-x-3 translate-y-1"
+              >$</span
+            >
             <input
               id="bill"
-              type="text"
-              placeholder="142.55"
-              class="w-full bg-transparent text-right text-teal-800 font-bold outline-none"
+              type="number"
+              placeholder="0"
+              class="w-full rounded-md shadow-sm pr-4 pl-8 py-1 placeholder:text-xl placeholder:font-bold font-bold text-xl bg-desired-very-light-gray text-right text-teal-800 outline-none"
             />
           </div>
         </div>
-        <div>Select Tip %</div>
-        <div>5% 10% 15% 25% 50% Custom</div>
+        <div class="my-7 flex flex-col gap-3 w-full text-start">
+          <div class="text-sm font-spaceMono text-gray-500 mb-1 font-bold">
+            Select Tip %
+          </div>
+          <div class="flex flex-wrap gap-y-3 justify-between">
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              5%
+            </button>
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              10%
+            </button>
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              15%
+            </button>
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              25%
+            </button>
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              50%
+            </button>
+            <button
+              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[8.7rem] rounded-md text-lg font-bold"
+            >
+              Custom
+            </button>
+          </div>
+        </div>
         <div>Number of People</div>
-        <div>Tip Amount / person</div>
-        <div>Total / person Reset</div>
+        <div>
+          <div>Tip Amount / person</div>
+          <div>Total / person Reset</div>
+        </div>
       </div>
     </div>
     <!-- <div class="attribution">

@@ -128,7 +128,7 @@ function calculateResults() {
     ? parseFloat(selectedTip.value / 100)
     : customTipInput.value / 100;
 
-  const tipPerPerson = +(billInput * tipPercentage).toFixed(2);
+  const tipPerPerson = +((billInput * tipPercentage) / peopleInput).toFixed(2);
   const totalPerPerson = +(billInput / peopleInput + +tipPerPerson).toFixed(2);
 
   console.log("total", totalPerPerson);

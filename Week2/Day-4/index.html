@@ -18,10 +18,12 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+     
+    <script defer src="./script.js"></script>
 
     <title>Frontend Mentor | Tip calculator app</title>
 
-   
+      
   </head>
   <body class="font-spaceMono bg-desired-light-gray-cyan">
     <div class="flex flex-col h-screen items-center md:justify-center">
@@ -44,38 +46,46 @@
               id="bill"
               type="number"
               placeholder="0"
-              class="w-full peer rounded-md shadow-sm pr-4 pl-8 2xl:pr-8 2xl:pl-12  py-2 2xl:py-3 placeholder:text-2xl 2xl:placeholder:text-3xl text-2xl 2xl:text-3xl placeholder:font-bold font-bold bg-desired-very-light-gray outline-none  hover:border-2 focus:border-2 box-border hover:box-border  hover:border-desired-strong-cyan focus:border-desired-strong-cyan text-right text-desired-dark-cyan [appearence:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0"
+              class="bill w-full peer rounded-md shadow-sm pr-4 pl-8 2xl:pr-8 2xl:pl-12  py-2 2xl:py-3 placeholder:text-2xl 2xl:placeholder:text-3xl text-2xl 2xl:text-3xl placeholder:font-bold font-bold bg-desired-very-light-gray outline-none  hover:border-2 focus:border-2 box-border hover:box-border  hover:border-desired-strong-cyan focus:border-desired-strong-cyan text-right text-desired-dark-cyan [appearence:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0"
             />
-            <img class="w-[10px] 2xl:w-4 h-auto absolute transform translate-x-4 -translate-y-7 peer-hover:-translate-y-8 peer-focus:-translate-y-8 2xl:translate-x-6 2xl:-translate-y-10 2xl:peer-hover:-translate-y-11 2xl:peer-focus:-translate-y-11" src="./images/icon-dollar.svg" alt="">
+            <img class="dollar-logo w-[10px] 2xl:w-4 h-auto absolute transform translate-x-4 -translate-y-7 peer-hover:-translate-y-8 peer-focus:-translate-y-8 2xl:translate-x-6 2xl:-translate-y-10 2xl:peer-hover:-translate-y-11 2xl:peer-focus:-translate-y-11" src="./images/icon-dollar.svg" alt="">
+            <div class="hidden error-bill text-red-500 italic text-sm mt-2 2xl:text-lg">Please enter a valid bill amount</div>
           </div>
         </div>
         <div class=" flex flex-col gap-3 w-full text-start">
           <div class="text-sm 2xl:text-lg font-spaceMono text-gray-500 mb-1 font-bold">
             Select Tip %
           </div>
-          <div class="flex flex-wrap w-full gap-y-3 md:gap-y-3 2xl:gap-y-4 justify-between">
+          <div class="flex flex-wrap w-full gap-y-3 md:gap-y-3 2xl:gap-y-4 md:gap-x-2 2xl:gap-x-2 justify-between">
             <button
-              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.5rem] 2xl:h-14 2xl:w-[8.5rem] rounded-md text-xl 2xl:text-3xl font-bold"
+              class="tip-button bg-desired-dark-cyan hover:bg-cyan-200 hover:text-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.2rem] 2xl:w-[8.2rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold" 
+              value="5"
+
             >
               5%
             </button>
             <button
-              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.5rem] 2xl:w-[8.5rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold"
+              class="tip-button bg-desired-dark-cyan hover:bg-cyan-200 hover:text-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.2rem] 2xl:w-[8.2rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold" 
+              value="10"
               >
               10%
             </button>
+            
             <button
-              class="bg-desired-strong-cyan text-desired-dark-cyan h-11 w-[47%] md:w-[6.5rem] 2xl:w-[8.5rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold"
+              class="tip-button bg-desired-dark-cyan hover:bg-cyan-200 hover:text-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.2rem] 2xl:w-[8.2rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold" 
+              value="15"
             >
               15%
             </button>
             <button
-              class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.5rem] 2xl:w-[8.5rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold"
+              class="tip-button bg-desired-dark-cyan hover:bg-cyan-200 hover:text-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.2rem] 2xl:w-[8.2rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold" 
+              value="25"
             >
               25%
             </button>
             <button
-            class="bg-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.5rem] 2xl:w-[8.5rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold"
+            class="tip-button bg-desired-dark-cyan hover:bg-cyan-200 hover:text-desired-dark-cyan text-desired-very-light-gray h-11 w-[47%] md:w-[6.2rem] 2xl:w-[8.2rem] 2xl:h-14 rounded-md text-xl 2xl:text-3xl font-bold" 
+            value="50"
             >
             50%
           </button>
@@ -86,23 +96,28 @@
             >
           </input>
         </div>
+        <div class="error-tip text-red-500 hidden italic text-sm 2xl:text-lg tracking-tight">Please select a tip percentage or enter a valid custom tip.</div>
       </div>
       <div class="w-full box-border">
-        <label
-        class="block text-sm 2xl:text-lg font-spaceMono text-gray-500 mb-1 font-bold"
-        for="people"
-        >
-        Number of People
-      </label>
+        <div class="flex justify-between items-center">
+          <label
+          class="block text-sm 2xl:text-lg font-spaceMono text-gray-500 mb-1 font-bold"
+          for="people"
+          >
+          Number of People
+        </label>
+        <div class="error-people text-sm hidden mb-3 text-red-500 italic tracking-tight  mt-2 2xl:text-lg">Can't be zero or less</div>
+      </div>
       <div class="relative">
         
         <input
         id="people"
         type="number"
         placeholder="0"
-        class="w-full peer rounded-md shadow-sm pr-4 pl-8 2xl:pl-12 2xl:pr-8 py-2 2xl:py-3 placeholder:text-2xl text-2xl 2xl:placeholder:text-3xl 2xl:text-3xl placeholder:font-bold font-bold bg-desired-very-light-gray outline-none  hover:border-2 focus:border-2 box-border hover:box-border  hover:border-desired-strong-cyan focus:border-desired-strong-cyan text-right text-desired-dark-cyan [appearence:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0"
+        class="people w-full peer rounded-md shadow-sm pr-4 pl-8 2xl:pl-12 2xl:pr-8 py-2 2xl:py-3 placeholder:text-2xl text-2xl 2xl:placeholder:text-3xl 2xl:text-3xl placeholder:font-bold font-bold bg-desired-very-light-gray outline-none  hover:border-2 focus:border-2 box-border hover:box-border  hover:border-desired-strong-cyan focus:border-desired-strong-cyan text-right text-desired-dark-cyan [appearence:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0"
         />
-        <img class="w-[10px] 2xl:w-4 h-auto absolute transform translate-x-4 -translate-y-7 peer-hover:-translate-y-8 peer-focus:-translate-y-8 2xl:translate-x-6 2xl:-translate-y-10 2xl:peer-hover:-translate-y-11 2xl:peer-focus:-translate-y-11" src="./images/icon-person.svg" alt="">
+        <img class="person-logo w-[10px] 2xl:w-4 h-auto absolute transform translate-x-4 -translate-y-7 peer-hover:-translate-y-8 peer-focus:-translate-y-8 2xl:translate-x-6 2xl:-translate-y-10 2xl:peer-hover:-translate-y-11 2xl:peer-focus:-translate-y-11" src="./images/icon-person.svg" alt="">
+        
       </div>
     </div>  
    </div>
@@ -111,15 +126,15 @@
             <div class="flex justify-between items-center">
               <div class="text-desired-very-light-gray text-sm 2xl
               2xl:text-lg font-bold">Tip Amount <div class="text-gray-400">/ person</div></div>
-              <div class="text-desired-strong-cyan font-bold text-4xl 2xl:text-5xl">$0.00</div>
+              <div class="text-desired-strong-cyan font-bold text-4xl 2xl:text-5xl">$<span class="tip-output">0.00</span></div>
             </div>
             <div class="flex justify-between items-center">
               <div class="text-desired-very-light-gray text-sm 2xl
               2xl:text-lg font-bold">Total <div class="text-gray-400">/ person </div></div>
-              <div class="text-desired-strong-cyan font-bold text-4xl 2xl:text-5xl">$0.00</div>
+              <div class="text-desired-strong-cyan font-bold text-4xl 2xl:text-5xl">$<span class="total-output">0.00</span></div>
             </div>
           </div>
-          <button class="bg-desired-strong-cyan 2xl:text-2xl text-desired-dark-cyan py-2 2xl:py-4 rounded-md w-full font-bold uppercase md:mb-1 2xl:mb-3">Reset</button>
+          <button class="reset-button bg-desired-strong-cyan hover:bg-cyan-200 active:bg-desired-strong-cyan 2xl:text-2xl text-desired-dark-cyan disabled:bg-desired-dark-disabled-cyan disabled:cursor-not-allowed py-2 2xl:py-4 rounded-md w-full font-bold uppercase md:mb-1 2xl:mb-3">Reset</button>
         </div>
     </div>
   </div>

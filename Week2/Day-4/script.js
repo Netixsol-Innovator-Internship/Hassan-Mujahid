@@ -69,16 +69,30 @@ function validateField(input) {
   if (input === bill) {
     const billValue = parseFloat(value);
     if (isNaN(billValue) || billValue <= 0) {
+      errorBill.textContent = "Please enter a valid bill amount";
       showError(errorBill);
       return false;
+    } else if (billValue > 100000) {
+      errorBill.textContent = "Max value 100,000";
+      showError(errorBill);
+      return false;
+    } else {
+      clearError(errorBill);
     }
   }
 
   if (input === people) {
     const peopleValue = parseInt(value, 10);
     if (isNaN(peopleValue) || peopleValue <= 0) {
+      errorPeople.textContent = "Can't be zero";
       showError(errorPeople);
       return false;
+    } else if (peopleValue > 250) {
+      errorPeople.textContent = "Max people allowed 250";
+      showError(errorPeople);
+      return false;
+    } else {
+      clearError(errorPeople);
     }
   }
 
@@ -89,14 +103,17 @@ function validateField(input) {
 
     const customTip = parseFloat(value);
     if ((!selectedTip && isNaN(customTip)) || customTip < 0) {
+      errorTip.textContent = "Please select or enter a valid tip";
       showError(errorTip);
       return false;
+    } else if (!isNaN(customTip) && customTip > 1000) {
+      errorTip.textContent = "Max tip allowed 1000%";
+      showError(errorTip);
+    } else {
+      clearError(errorTip);
     }
   }
 
-  clearError(errorBill);
-  clearError(errorPeople);
-  clearError(errorTip);
   return true;
 }
 function validateInputs() {
@@ -130,9 +147,6 @@ function calculateResults() {
 
   const tipPerPerson = +((billInput * tipPercentage) / peopleInput).toFixed(2);
   const totalPerPerson = +(billInput / peopleInput + +tipPerPerson).toFixed(2);
-
-  console.log("total", totalPerPerson);
-  console.log("tip", tipPerPerson);
 
   !!tipPerPerson ? (tipOutput.textContent = tipPerPerson) : "";
   !!totalPerPerson ? (totalOutput.textContent = totalPerPerson) : "";
@@ -183,6 +197,9 @@ resetButton.addEventListener("click", () => {
   customTipInput.value = "";
   bill.value = "";
   people.value = "";
+  clearError(errorBill);
+  clearError(errorTip);
+  clearError(errorPeople);
   tipOutput.textContent = "0.00";
   totalOutput.textContent = "0.00";
   tipOutput.textContent !== "0.00" || totalOutput.textContent !== "0.00"

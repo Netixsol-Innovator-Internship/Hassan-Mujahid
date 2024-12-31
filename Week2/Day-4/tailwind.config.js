@@ -15,6 +15,9 @@ module.exports = {
         "desired-dark-disabled-cyan": "hsl(183, 79%, 24%)",
         "desired-dark-cyan": "hsl(183, 100%, 15%)",
       },
+      screens: {
+        "h-lg-mb": { raw: "(min-height: 848px)" },
+      },
     },
   },
   safelist: [

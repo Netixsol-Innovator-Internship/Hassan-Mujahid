@@ -26,13 +26,13 @@
       
   </head>
   <body class="font-spaceMono bg-desired-light-gray-cyan">
-    <div class="flex flex-col h-screen items-center md:justify-center">
+    <div class="flex flex-col min-h-screen items-center md:justify-center box-border">
       <h1
         class="uppercase flex flex-col tracking-[0.5rem] text-desired-dark-grayish-cyan font-bold text-xl 2xl:text-3xl 2xl:gap-1 py-10 md:pb-10 2xl:pb-20 md:pt-0"
       >
         <span>Spli</span><span>tter</span>
       </h1>
-      <div class="flex flex-col max-w-md md:max-w-3xl 2xl:max-w-5xl md:flex-row gap-7 2xl:gap-12 items-center bg-white w-screen  p-7 2xl:p-9 rounded-t-3xl sm:rounded-3xl">
+      <div class="flex flex-col max-w-md md:max-w-3xl 2xl:max-w-5xl md:flex-row gap-7 2xl:gap-12 items-center bg-white min-w-screen p-7 2xl:p-9 rounded-t-3xl sm:rounded-3xl h-lg-mb:rounded-3xl h-full">
         <div class="flex flex-col gap-7 2xl:gap-10 md:w-[50%] p-2 2xl:p-3">
            <div class="w-full box-border">
              <label
@@ -46,6 +46,8 @@
               id="bill"
               type="number"
               placeholder="0"
+              required
+              max="1000000"
               class="bill w-full peer rounded-md shadow-sm pr-4 pl-8 2xl:pr-8 2xl:pl-12  py-2 2xl:py-3 placeholder:text-2xl 2xl:placeholder:text-3xl text-2xl 2xl:text-3xl placeholder:font-bold font-bold bg-desired-very-light-gray outline-none  hover:border-2 focus:border-2 box-border hover:box-border  hover:border-desired-strong-cyan focus:border-desired-strong-cyan text-right text-desired-dark-cyan [appearence:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0"
             />
             <img class="dollar-logo w-[10px] 2xl:w-4 h-auto absolute transform translate-x-4 -translate-y-7 peer-hover:-translate-y-8 peer-focus:-translate-y-8 2xl:translate-x-6 2xl:-translate-y-10 2xl:peer-hover:-translate-y-11 2xl:peer-focus:-translate-y-11" src="./images/icon-dollar.svg" alt="">
@@ -121,7 +123,7 @@
       </div>
     </div>  
    </div>
-        <div class="flex flex-col gap-7 md:justify-between bg-desired-dark-cyan p-5 md:p-8 w-full  md:w-[50%] md:h-full rounded-xl">
+        <div class="flex flex-col md:min-h-[22rem] 2xl:min-h-[29rem] gap-7 md:justify-between bg-desired-dark-cyan p-5 md:p-8 w-full  md:w-[50%] rounded-xl">
           <div class="flex flex-col gap-7 md:gap-10 md:pt-4 2xl:pt-8 2xl:gap-14">
             <div class="flex justify-between items-center">
               <div class="text-desired-very-light-gray text-sm 2xl

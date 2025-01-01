@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body class="bg-desired-white font-epilogue box-border">
+    <div class="flex w-full min-h-screen justify-center items-center">
+      <div class="h-screen w-full max-w-screen">
+        <div class="flex items-center w-full">
+          <div class="flex w-full mx-3 my-3 items-center justify-between">
+            <span class="font-bold text-3xl mob-md:text-[2rem] tracking-tight"
+              >snap</span
+            >
+            <nav class="hidden nav-desk">Features Company Careers About</nav>
+            <img class="h-4" src="./images/icon-menu.svg" alt="" />
+          </div>
+          <div class="hidden buttons-desk">Login Register</div>
+        </div>
+        <div
+          class="flex flex-col-reverse md:flex-row w-full gap-10 md:pl-16 md:pr-7"
+        >
+          <div
+            class="flex flex-col gap-3 mob-md-lg:gap-5 md:justify-center md:items-center"
+          >
+            <div class="flex flex-col gap-3 mob-md-lg:gap-5">
+              <h1
+                class="font-bold text-center md:text-start text-3xl mob-md:text-[2rem] mob-md-lg:text-[2.15rem] mob-xl:text-4xl md:text-5xl md:pr-[4.1rem]"
+              >
+                Make remote work
+              </h1>
+              <p
+                class="text-center md:text-start text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg font-[500] text-desired-gray px-[14px] mob-md:px-5 mob-md-lg:px-3 mob-lg:px-6 mob-xl:px-4 md:px-0"
+              >
+                Get your team in sync, no matter your location. Streamline
+                processes, create team rituals, and watch productivity soar.
+              </p>
+              <button
+                class="bg-desired-black text-desired-white mx-auto md:mx-0 md:inline-block py-3 px-5 mob-md:py-4 mob-md:px-6 mt-3 rounded-xl font-bold text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg mob-xl:px-7"
+              >
+                Learn more
+              </button>
+              <div
+                class="flex flex-wrap w-full justify-between items-center px-3 mt-7 mb-10"
+              >
+                <img
+                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
+                  src="./images/client-databiz.svg"
+                  alt=""
+                />
+                <img
+                  class="w-auto h-6 mob-2xl:h-8"
+                  src="./images/client-audiophile.svg"
+                  alt=""
+                />
+                <img
+                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
+                  src="./images/client-meet.svg"
+                  alt=""
+                />
+                <img
+                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
+                  src="./images/client-maker.svg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <img
+              class="md:hidden w-full mob-md-lg:h-[40vh] mob-2xl:h-[60vh] object-cover object-top"
+              src="./images/image-hero-mobile.png"
+              alt=""
+            />
+            <div class="hidden md:block">
+              <img class="" src="./images/image-hero-desktop.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </body>
+</html>

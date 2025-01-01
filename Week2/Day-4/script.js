@@ -82,7 +82,7 @@ function validateField(input) {
   }
 
   if (input === people) {
-    const peopleValue = parseInt(value, 10);
+    const peopleValue = parseFloat(value);
     if (isNaN(peopleValue) || peopleValue <= 0) {
       errorPeople.textContent = "Can't be zero";
       showError(errorPeople);
@@ -109,6 +109,7 @@ function validateField(input) {
     } else if (!isNaN(customTip) && customTip > 1000) {
       errorTip.textContent = "Max tip allowed 1000%";
       showError(errorTip);
+      return false;
     } else {
       clearError(errorTip);
     }

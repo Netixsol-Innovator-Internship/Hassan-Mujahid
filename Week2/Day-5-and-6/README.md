@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week2/Day-5-and-6)
-- Live Site URL: [Add live site URL here](https://intro-section-solution-by-hassan.netlify.app/)
+- Solution URL: [Solution](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week2/Day-5-and-6)
+- Live Site URL: [Live-site](https://intro-section-solution-by-hassan.netlify.app/)
 
 ## My process
 

@@ -14,12 +14,36 @@ const companyDownArrow = document.querySelector(".company-icon-arrow-down");
 const companyUpArrow = document.querySelector(".company-icon-arrow-up");
 const featureDropdown = document.querySelector(".feature-dropDown");
 const companyDropdown = document.querySelector(".company-dropDown");
+const parentDiv = document.querySelector(".main-div");
 
 menuButton.addEventListener("click", (e) => {
   e.target.classList.add("hidden");
   closeButton.classList.remove("hidden");
   mobileNav.classList.remove("translate-x-full");
   backdrop.classList.remove("hidden");
+});
+
+parentDiv.addEventListener("click", () => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "invisible",
+    "absolute",
+    "-top-[9999px]",
+  ];
+
+  ClassesToToggle.forEach((className) => {
+    if (!featureDropdown.classList.contains(className)) {
+      featureDownArrow.classList.toggle("hidden");
+      featureUpArrow.classList.toggle("hidden");
+      featureDropdown.classList.add(className);
+    }
+    if (!companyDropdown.classList.contains(className)) {
+      companyDownArrow.classList.toggle("hidden");
+      companyUpArrow.classList.toggle("hidden");
+      companyDropdown.classList.add(className);
+    }
+  });
 });
 
 closeButton.addEventListener("click", (e) => {
@@ -50,10 +74,31 @@ closeButton.addEventListener("click", (e) => {
 });
 
 backdrop.addEventListener("click", (e) => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "invisible",
+    "absolute",
+    "-top-[9999px]",
+  ];
+
   e.target.classList.add("hidden");
   closeButton.classList.add("hidden");
   menuButton.classList.remove("hidden");
   mobileNav.classList.add("translate-x-full");
+
+  ClassesToToggle.forEach((className) => {
+    if (!featureDropdown.classList.contains(className)) {
+      featureDownArrow.classList.toggle("hidden");
+      featureUpArrow.classList.toggle("hidden");
+      featureDropdown.classList.add(className);
+    }
+    if (!companyDropdown.classList.contains(className)) {
+      companyDownArrow.classList.toggle("hidden");
+      companyUpArrow.classList.toggle("hidden");
+      companyDropdown.classList.add(className);
+    }
+  });
 });
 
 featureButton.addEventListener("click", () => {

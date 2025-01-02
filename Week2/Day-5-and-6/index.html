@@ -18,79 +18,242 @@
       href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./script.js"></script>
 
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body class="bg-desired-white font-epilogue box-border">
-    <div class="flex w-full min-h-screen justify-center items-center">
-      <div class="h-screen w-full max-w-screen">
-        <div class="flex items-center w-full">
-          <div class="flex w-full mx-3 my-3 items-center justify-between">
-            <span class="font-bold text-3xl mob-md:text-[2rem] tracking-tight"
+    <div class="flex w-full min-h-screen gap-10 justify-center items-center">
+      <div
+        class="h-screen relative md:static w-full max-w-screen overflow-x-hidden md:overflow-auto"
+      >
+        <div
+          class="flex justify-between px-3 py-3 md:px-1 md:py-3 lg:px-10 lg:py-5 w-full"
+        >
+          <div class="flex w-full items-center md:gap-10 lg:gap-14 2xl:gap-20">
+            <span
+              class="font-bold text-3xl mob-md:text-[2rem] 2xl:text-4xl 3xl:text-5xl tracking-tight"
               >snap</span
             >
-            <nav class="hidden nav-desk">Features Company Careers About</nav>
-            <img class="h-4" src="./images/icon-menu.svg" alt="" />
+            <div
+              class="flex mob-nav flex-col md:flex-row gap-7 absolute md:static md:justify-between w-[65%] h-screen md:h-auto md:w-full items-center z-10 top-0 right-0 transition-all duration-100 transform translate-x-full md:translate-x-0 bg-white md:bg-transparent"
+            >
+              <nav
+                class="md:block mt-20 flex w-full pl-5 md:mt-0 md:w-auto md:pl-0"
+              >
+                <ul
+                  class="list-none flex flex-col md:flex-row 0 gap-5 md:gap-7 2xl:gap-16 text-desired-gray text-base 2xl:text-lg md:text-xs font-[500]"
+                >
+                  <li class="flex flex-col gap-4 md:gap-0 md:items-center">
+                    <span
+                      class="flex feature-button static md:relative items-center gap-3 md:gap-1 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                    >
+                      Features
+                      <img
+                        class="feature-icon-arrow-down"
+                        src="./images/icon-arrow-down.svg"
+                        alt="" />
+                      <img
+                        class="hidden feature-icon-arrow-up"
+                        src="./images/icon-arrow-up.svg"
+                        alt="" /></span
+                    ><span
+                      class="feature-dropDown opacity-0 pointer-events-none invisible -top-[9999px] absolute md:absolute transform md:translate-y-6 md:-translate-x-6 2xl:translate-y-8 2xl:-translate-x-10 md:bg-white md:p-5 2xl:py-6 2xl:px-9 md:rounded-lg md:shadow-2xl pl-6 md:pl-5 transition-all duration-100"
+                      ><ul
+                        class="flex flex-col gap-3 md:gap-2 md:text-xs text-base 2xl:text-lg"
+                      >
+                        <li
+                          class="flex items-center gap-3 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <img
+                            class="h-3 2xl:h-5"
+                            src="./images/icon-todo.svg"
+                            alt="todo-icon"
+                          /><span class="text-nowrap">Todo List</span>
+                        </li>
+                        <li
+                          class="flex items-center gap-3 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <img
+                            class="h-3 2xl:h-5 w-auto"
+                            src="./images/icon-calendar.svg"
+                            alt="todo-icon"
+                          /><span>Calender</span>
+                        </li>
+                        <li
+                          class="flex items-center gap-3 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <img
+                            class="h-3 2xl:h-5 w-auto"
+                            src="./images/icon-reminders.svg"
+                            alt="todo-icon"
+                          /><span>Reminders</span>
+                        </li>
+                        <li
+                          class="flex items-center gap-3 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <img
+                            class="h-3 2xl:h-5 w-auto"
+                            src="./images/icon-planning.svg"
+                            alt="todo-icon"
+                          /><span>Planning</span>
+                        </li>
+                      </ul></span
+                    >
+                  </li>
+                  <li class="flex flex-col gap-4 md:gap-1 md:items-center">
+                    <span
+                      class="company-button flex static md:relative items-center gap-3 md:gap-1 active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                    >
+                      Company
+                      <img
+                        class="company-icon-arrow-down"
+                        src="./images/icon-arrow-down.svg"
+                        alt=""
+                      />
+                      <img
+                        class="hidden company-icon-arrow-up"
+                        src="./images/icon-arrow-up.svg"
+                        alt=""
+                      />
+                    </span>
+                    <span
+                      class="company-dropDown opacity-0 pointer-events-none invisible absolute -top-[9999px] md:absolute transform md:translate-y-6 md:translate-x-2 2xl:translate-y-8 md:bg-white md:p-4 2xl:p-5 md:rounded-lg md:shadow-2xl pl-6 md:pl-4"
+                      ><ul
+                        class="flex flex-col gap-3 md:gap-2 text-base md:text-xs 2xl:text-lg"
+                      >
+                        <li
+                          class="active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <span>History</span>
+                        </li>
+                        <li
+                          class="active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <span>Our Team</span>
+                        </li>
+                        <li
+                          class="active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                        >
+                          <span>Blog</span>
+                        </li>
+                      </ul></span
+                    >
+                  </li>
+                  <li
+                    class="active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                  >
+                    Careers
+                  </li>
+                  <li
+                    class="active:text-desired-black hover:text-desired-black hover:cursor-pointer"
+                  >
+                    About
+                  </li>
+                </ul>
+              </nav>
+              <div
+                class="flex flex-col w-full md:w-auto md:flex md:flex-row gap-5 2xl:gap-7 buttons-desk"
+              >
+                <button
+                  class="text-sm md:text-xs text-desired-gray hover:text-desired-black font-[500] 2xl:text-lg"
+                >
+                  Login
+                </button>
+                <button
+                  class="text-sm md:text-xs text-desired-gray hover:text-desired-black bg-transparent border-[1px] h-9 w-[80%] mx-auto md:h-auto md:w-auto md:mx-0 md:py-2 md:px-3 border-desired-gray hover:border-desired-black rounded-xl font-[500] 2xl:text-lg"
+                >
+                  Register
+                </button>
+              </div>
+            </div>
+            <div
+              class="top-0 backdrop absolute left-0 w-full h-screen bg-[rgb(0,0,0,0.5)] z-[9] hidden"
+            ></div>
           </div>
-          <div class="hidden buttons-desk">Login Register</div>
+
+          <button class="block z-[11] md:hidden">
+            <img
+              class="h-4 nav-menu-button"
+              src="./images/icon-menu.svg"
+              alt="icon-menu"
+            />
+            <img
+              class="hidden nav-close-button"
+              src="./images/icon-close-menu.svg"
+              alt="icon-close-menu"
+            />
+          </button>
         </div>
         <div
-          class="flex flex-col-reverse md:flex-row w-full gap-10 md:pl-16 md:pr-7"
+          class="flex md:h-[80vh] md:items-center md:justify-center w-full gap-10"
         >
           <div
-            class="flex flex-col gap-3 mob-md-lg:gap-5 md:justify-center md:items-center"
+            class="flex flex-col-reverse gap-10 md:flex-row md:justify-evenly md:px-1 w-full md:h-[30.7rem] 2xl:h-[40rem]"
           >
-            <div class="flex flex-col gap-3 mob-md-lg:gap-5">
-              <h1
-                class="font-bold text-center md:text-start text-3xl mob-md:text-[2rem] mob-md-lg:text-[2.15rem] mob-xl:text-4xl md:text-5xl md:pr-[4.1rem]"
-              >
-                Make remote work
-              </h1>
-              <p
-                class="text-center md:text-start text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg font-[500] text-desired-gray px-[14px] mob-md:px-5 mob-md-lg:px-3 mob-lg:px-6 mob-xl:px-4 md:px-0"
-              >
-                Get your team in sync, no matter your location. Streamline
-                processes, create team rituals, and watch productivity soar.
-              </p>
-              <button
-                class="bg-desired-black text-desired-white mx-auto md:mx-0 md:inline-block py-3 px-5 mob-md:py-4 mob-md:px-6 mt-3 rounded-xl font-bold text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg mob-xl:px-7"
-              >
-                Learn more
-              </button>
+            <div
+              class="flex flex-col gap-3 mob-md-lg:gap-5 justify-items-center md:self-end md:max-w-[23rem] 2xl:max-w-[30rem]"
+            >
               <div
-                class="flex flex-wrap w-full justify-between items-center px-3 mt-7 mb-10"
+                class="flex flex-col gap-3 mob-md-lg:gap-5 md:gap-10 2xl:gap-12 box-border"
               >
+                <h1
+                  class="font-bold text-center md:text-start text-3xl mob-md:text-[2rem] mob-md-lg:text-[2.15rem] mob-xl:text-4xl 2xl:text-7xl md:text-[3.5rem] md:leading-[1]"
+                >
+                  Make remote work
+                </h1>
+                <p
+                  class="text-center md:text-start text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg font-[500] text-desired-gray px-[14px] mob-md:px-5 mob-md-lg:px-3 mob-lg:px-6 mob-xl:px-4 md:px-0 md:text-sm 2xl:text-lg 2xl:pr-10"
+                >
+                  Get your team in sync, no matter your location. Streamline
+                  processes, create team rituals, and watch productivity soar.
+                </p>
+                <div class="flex items-center justify-center md:block">
+                  <button
+                    class="bg-desired-black text-desired-white hover:bg-desired-white hover:text-desired-black active:bg-desired-white active:text-desired-black border-[1px] border-desired-black py-3 px-5 mob-md:py-4 mob-md:px-6 mt-3 rounded-xl font-bold text-sm mob-md:text-[0.90rem] mob-md-lg:text-base mob-xl:text-lg mob-xl:px-7 md:text-sm 2xl:text-xl md:py-3 md:px-5 2xl:py-4 2xl:px-6"
+                  >
+                    Learn more
+                  </button>
+                </div>
+                <div
+                  class="flex flex-wrap w-full justify-between items-center px-3 mt-7 mb-10 md:mb-0 md:px-0"
+                >
+                  <img
+                    class="w-auto h-[14px] mob-2xl:h-[1.2rem] md:h-[1rem] 2xl:h-[1.5rem]"
+                    src="./images/client-databiz.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-auto h-6 mob-2xl:h-8 2xl:h-10"
+                    src="./images/client-audiophile.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-auto h-[14px] mob-2xl:h-[1.2rem] md:h-[1rem] 2xl:h-[1.5rem]"
+                    src="./images/client-meet.svg"
+                    alt=""
+                  />
+                  <img
+                    class="w-auto h-[14px] mob-2xl:h-[1.2rem] md:h-[1rem] 2xl:h-[1.5rem]"
+                    src="./images/client-maker.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="w-full x md:h-auto md:max-w-[23rem] 2xl:max-w-[30rem]">
+              <img
+                class="block md:hidden w-full mob-md-lg:[40vh] mob-2xl:h-[60vh] object-cover object-top"
+                src="./images/image-hero-mobile.png"
+                alt=""
+              />
+              <div class="hidden md:block h-full">
                 <img
-                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
-                  src="./images/client-databiz.svg"
-                  alt=""
-                />
-                <img
-                  class="w-auto h-6 mob-2xl:h-8"
-                  src="./images/client-audiophile.svg"
-                  alt=""
-                />
-                <img
-                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
-                  src="./images/client-meet.svg"
-                  alt=""
-                />
-                <img
-                  class="w-auto h-[14px] mob-2xl:h-[1.2rem]"
-                  src="./images/client-maker.svg"
+                  class="h-auto"
+                  src="./images/image-hero-desktop.png"
                   alt=""
                 />
               </div>
-            </div>
-          </div>
-          <div class="w-full">
-            <img
-              class="md:hidden w-full mob-md-lg:h-[40vh] mob-2xl:h-[60vh] object-cover object-top"
-              src="./images/image-hero-mobile.png"
-              alt=""
-            />
-            <div class="hidden md:block">
-              <img class="" src="./images/image-hero-desktop.png" alt="" />
             </div>
           </div>
         </div>

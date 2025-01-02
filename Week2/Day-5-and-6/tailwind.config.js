@@ -17,8 +17,17 @@ module.exports = {
         "mob-lg": "383px",
         "mob-xl": "407px",
         "mob-2xl": "526px",
+        "3xl": "1920px",
+        "4xl": "2560px",
       },
     },
   },
+  safeList: [
+    "opacity-0",
+    "pointer-events-none",
+    "invisible",
+    "absolute",
+    "-top-[9999px]",
+  ],
   plugins: [],
 };

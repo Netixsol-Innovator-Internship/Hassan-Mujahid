@@ -3,6 +3,9 @@ module.exports = {
   content: ["./index.html"],
   theme: {
     extend: {
+      clipPath: {
+        "inset-100": "inset(100%)",
+      },
       colors: {
         "desired-white": "hsl(0, 0%, 98%)",
         "desired-gray": "hsl(0, 0%, 41%)",
@@ -28,6 +31,15 @@ module.exports = {
     "invisible",
     "absolute",
     "-top-[9999px]",
+    "fixed",
   ],
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".clip-inset-100": {
+          clipPath: "inset(100%)",
+        },
+      });
+    },
+  ],
 };

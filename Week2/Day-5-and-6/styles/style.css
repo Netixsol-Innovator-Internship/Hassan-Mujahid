@@ -566,6 +566,10 @@ video {
   position: static;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -894,14 +898,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-100 {
-  transition-duration: 100ms;
-}
-
-.duration-200 {
-  transition-duration: 200ms;
-}
-
 .duration-300 {
   transition-duration: 300ms;
 }
@@ -910,8 +906,8 @@ video {
   transition-duration: 500ms;
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+.clip-inset-100 {
+  clip-path: inset(100%);
 }
 
 .hover\:cursor-pointer:hover {

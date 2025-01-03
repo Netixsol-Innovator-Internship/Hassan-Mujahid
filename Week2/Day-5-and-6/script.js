@@ -27,9 +27,8 @@ parentDiv.addEventListener("click", () => {
   const ClassesToToggle = [
     "opacity-0",
     "pointer-events-none",
-    "invisible",
     "absolute",
-    "-top-[9999px]",
+    "clip-inset-100",
   ];
 
   ClassesToToggle.forEach((className) => {
@@ -50,9 +49,8 @@ closeButton.addEventListener("click", (e) => {
   const ClassesToToggle = [
     "opacity-0",
     "pointer-events-none",
-    "invisible",
     "absolute",
-    "-top-[9999px]",
+    "clip-inset-100",
   ];
 
   e.target.classList.add("hidden");
@@ -77,9 +75,8 @@ backdrop.addEventListener("click", (e) => {
   const ClassesToToggle = [
     "opacity-0",
     "pointer-events-none",
-    "invisible",
     "absolute",
-    "-top-[9999px]",
+    "clip-inset-100",
   ];
 
   e.target.classList.add("hidden");
@@ -105,9 +102,8 @@ featureButton.addEventListener("click", () => {
   const ClassesToToggle = [
     "opacity-0",
     "pointer-events-none",
-    "invisible",
     "absolute",
-    "-top-[9999px]",
+    "clip-inset-100",
   ];
 
   featureDownArrow.classList.toggle("hidden");
@@ -121,9 +117,8 @@ companyButton.addEventListener("click", () => {
   const ClassesToToggle = [
     "opacity-0",
     "pointer-events-none",
-    "invisible",
     "absolute",
-    "-top-[9999px]",
+    "clip-inset-100",
   ];
 
   companyDownArrow.classList.toggle("hidden");

@@ -270,3 +270,160 @@ function validateField(input) {
 
 **Time Complexity:** O(1)  
 The function evaluates a fixed set of conditions and performs DOM manipulations accordingly. No loops or recursive operations are involved.
+
+## Dropdown Navigation Logic
+
+---
+
+### 1. Event Listener: `menuButton.addEventListener`
+
+#### Code Reference:
+
+```javascript
+menuButton.addEventListener("click", (e) => {
+  e.target.classList.add("hidden");
+  closeButton.classList.remove("hidden");
+  mobileNav.classList.remove("translate-x-full");
+  backdrop.classList.remove("hidden");
+});
+```
+
+#### Time Complexity: O(1)
+
+- The function directly manipulates a fixed set of DOM elements without any loops or recursion.
+- The number of operations remains constant regardless of application size.
+
+---
+
+### 2. Event Listener: `parentDiv.addEventListener`
+
+#### Code Reference:
+
+```javascript
+parentDiv.addEventListener("click", () => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "absolute",
+    "clip-inset-100",
+  ];
+
+  ClassesToToggle.forEach((className) => {
+    if (!featureDropdown.classList.contains(className)) {
+      featureDownArrow.classList.toggle("hidden");
+      featureUpArrow.classList.toggle("hidden");
+      featureDropdown.classList.add(className);
+    }
+    if (!companyDropdown.classList.contains(className)) {
+      companyDownArrow.classList.toggle("hidden");
+      companyUpArrow.classList.toggle("hidden");
+      companyDropdown.classList.add(className);
+    }
+  });
+});
+```
+
+#### Time Complexity: O(n)
+
+- The function iterates through the `ClassesToToggle` array, which contains a fixed number of class names.
+- The complexity scales with the size of the `ClassesToToggle` array (n).
+
+---
+
+### 3. Event Listener: `closeButton.addEventListener`
+
+#### Code Reference:
+
+```javascript
+closeButton.addEventListener("click", (e) => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "absolute",
+    "clip-inset-100",
+  ];
+
+  e.target.classList.add("hidden");
+  menuButton.classList.remove("hidden");
+  mobileNav.classList.add("translate-x-full");
+  backdrop.classList.add("hidden");
+  ClassesToToggle.forEach((className) => {
+    if (!featureDropdown.classList.contains(className)) {
+      featureDownArrow.classList.toggle("hidden");
+      featureUpArrow.classList.toggle("hidden");
+      featureDropdown.classList.add(className);
+    }
+    if (!companyDropdown.classList.contains(className)) {
+      companyDownArrow.classList.toggle("hidden");
+      companyUpArrow.classList.toggle("hidden");
+      companyDropdown.classList.add(className);
+    }
+  });
+});
+```
+
+#### Time Complexity: O(n)
+
+- Similar to `parentDiv.addEventListener`, this function iterates through the `ClassesToToggle` array and performs DOM manipulations.
+
+---
+
+### 4. Event Listener: `backdrop.addEventListener`
+
+#### Code Reference:
+
+```javascript
+backdrop.addEventListener("click", (e) => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "absolute",
+    "clip-inset-100",
+  ];
+
+  e.target.classList.add("hidden");
+  closeButton.classList.add("hidden");
+  menuButton.classList.remove("hidden");
+  mobileNav.classList.add("translate-x-full");
+
+  ClassesToToggle.forEach((className) => {
+    if (!featureDropdown.classList.contains(className)) {
+      featureDownArrow.classList.toggle("hidden");
+      featureUpArrow.classList.toggle("hidden");
+      featureDropdown.classList.add(className);
+    }
+    if (!companyDropdown.classList.contains(className)) {
+      companyDownArrow.classList.toggle("hidden");
+      companyUpArrow.classList.toggle("hidden");
+      companyDropdown.classList.add(className);
+    }
+  });
+});
+```
+
+#### Time Complexity: O(n)
+
+- The function loops through the `ClassesToToggle` array and updates the state of dropdown elements.
+
+---
+
+### 5. Event Listener: `featureButton.addEventListener`
+
+#### Code Reference:
+
+```javascript
+featureButton.addEventListener("click", () => {
+  const ClassesToToggle = [
+    "opacity-0",
+    "pointer-events-none",
+    "absolute",
+    "clip-inset-100",
+  ];
+
+  featureDownArrow.classList.toggle("hidden");
+  featureUpArrow.classList.toggle("hidden");
+  ClassesToToggle.forEach((className) =>
+    featureDropdown.classList.toggle(className)
+  );
+});
+```

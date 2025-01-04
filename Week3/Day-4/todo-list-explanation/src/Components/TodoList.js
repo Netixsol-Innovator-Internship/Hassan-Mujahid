@@ -7,6 +7,6 @@ export default function TodoList({ todos, toggleTodo }) {
       {todos.map((todo) => (
         <Todo todo={todo} key={todo.name} toggleTodo={toggleTodo} />
       ))}
-    </div>
+    </div> // In this it maps over todos array and give pass the individual todo to Todo Compoenet
   );
 }

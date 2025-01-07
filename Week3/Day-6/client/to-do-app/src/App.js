@@ -8,14 +8,14 @@ const App = () => {
 
   // Fetch tasks from backend
   useEffect(() => {
-    fetch("http://localhost:5000/todos")
+    fetch("http://192.168.18.13:5000/todos/")
       .then((response) => response.json())
       .then((data) => setTodos(data));
   }, []);
 
   // Add a new task
   const addTodo = (text) => {
-    fetch("http://localhost:5000/todos", {
+    fetch("http://192.168.18.13:5000/todos/create", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
@@ -26,7 +26,7 @@ const App = () => {
 
   // Delete a task
   const deleteTodo = async (id) => {
-    await fetch(`http://localhost:5000/todos/${id}`, {
+    await fetch(`http://192.168.18.13:5000/todos/delete/${id}`, {
       method: "DELETE",
     });
     setTodos((todos) => todos.filter((todo) => todo.id !== id));
@@ -34,7 +34,7 @@ const App = () => {
 
   // Toggle task completion
   const toggleComplete = (id, completed) => {
-    fetch(`http://localhost:5000/todos/${id}`, {
+    fetch(`http://192.168.18.13:5000/todos/update/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ completed: !completed }),

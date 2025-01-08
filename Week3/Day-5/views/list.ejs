@@ -6,6 +6,7 @@
     <title>To do list</title>
   </head>
   <body>
+    <!--using script tag to use the passed prop value in this EJS code-->
     <h1><%= kindOfDay %></h1>
 
     <ul>
@@ -14,8 +15,9 @@
       <li>Eat Food</li>
       <% for(let i = 0; i < newItems.length; i++) { %>
 
+      <!--using script tag to use the passed prop value in this EJS code -->
       <li><%= newItems[i] %></li>
-      <% } %>
+      <% } %><!--This for loop is running until (newItems.length - 1), for each loop is creating a list item with the name of the task  -->
       <!--In this script tag is used to run javascript code inside HTML code -->
       <li>
         <form action="/" method="post">

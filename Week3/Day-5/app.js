@@ -14,16 +14,15 @@ app.get("/", (req, res) => {
     month: "long",
     day: "numeric",
   };
-  const today = new Date();
-  const day = today.toLocaleDateString("en-US", options);
-  res.render("list", { kindOfDay: day, newItems: newItems });
+  const today = new Date(); // creating current date
+  const day = today.toLocaleDateString("en-US", options); //converting it en-US date format
+  res.render("list", { kindOfDay: day, newItems: newItems }); // rendering the list.ejs file and passing the object as prop to it.
 }); // Handles the get requests coming at "/" path
 
 app.post("/", (req, res) => {
-  const newItem = req.body.newItem;
-  console.log(newItem);
-  newItems.push(newItem);
-  res.redirect("/"); // Redirecting it to get request path (As ny default the request is of get type)
-}); // Handles the post requests cooming at "/" path
+  const newItem = req.body.newItem; //extracting newItem from req.body
+  newItems.push(newItem); //pushing it to newItems array
+  res.redirect("/"); // Redirecting it to get request path (As by default the request is of get type)
+}); // Handles the post requests coming at "/" path
 
 app.listen(3000, console.log("listening on port 3000")); // creates a server and listen to it at port 3000;

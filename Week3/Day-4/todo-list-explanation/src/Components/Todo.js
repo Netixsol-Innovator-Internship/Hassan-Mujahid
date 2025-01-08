@@ -3,7 +3,7 @@ import React from "react";
 export default function Todo({ todo, toggleTodo }) {
   const handleTodoClick = () => {
     toggleTodo(todo.id);
-  }; // This handleTodoclick function is managing calling the toggleTodo for this specific tod by passing it's id to the toggleTodo function recieving as a prop
+  }; // This handleTodoclick function is managing calling the toggleTodo for this specific todo by passing it's id to the toggleTodo function recieving as a prop
 
   return (
     <div>

@@ -13,7 +13,7 @@ export default function App() {
     if (storedTodos) {
       setTodos(storedTodos);
     }
-  }, []); //Using useEffect hook to get stored todos from localStorage and updating current state to them only when component load for first time
+  }, []); // Using useEffect hook to get stored todos from localStorage and updating current state to them only when component load for first time
 
   useEffect(() => {
     if (todos.length !== 0)
@@ -22,7 +22,7 @@ export default function App() {
 
   const handleAddTodo = () => {
     const name = todoNameRef.current.value; // When a user clicks on Add todo button it get's current input value
-    if (name === "") return; // if input or name is empty the function stops anddoes not continue further
+    if (name === "") return; // if input or name is empty the function stops and does not continue further
     setTodos((prevTodos) => {
       return [...prevTodos, { id: uuidv4(), name: name, complete: false }];
     }); // It sets todos, the callback function gets prevTodos,spread operator opens the previouly stored results in the new array, and new results (object) also get's stored in it.
@@ -46,10 +46,15 @@ export default function App() {
 
   return (
     <>
+      {/*In this toggle todo is passed as a prop*/}
       <TodoList todos={todos} toggleTodo={toggleTodo} />
+      {/*input has given ref prop to select is using use useRef hook */}
       <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add Todo</button>
+      {/*handleAddTodo is getting triggered on each click on this (Add Todo) button and handles the above mentioned functionality */}
+      <button onClick={handleAddTodo}>Add Todo</button>{" "}
+      {/*clearCompletedTodos is getting triggered on each click on this button managing removing of the todos which get checked */}
       <button onClick={clearCompletedTodos}>Clear Complete</button>
+      {/*In this checkedTodos length is checking and returning length of the total left tasks by checking the length of the the total left todos array length */}
       <div>{checkedTodos.length} left todo</div>
     </>
   );

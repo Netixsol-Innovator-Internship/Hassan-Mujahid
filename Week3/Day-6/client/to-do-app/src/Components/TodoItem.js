@@ -16,10 +16,11 @@ const TodoItem = ({ todo, deleteTodo, toggleComplete }) => {
         style={{
           textDecoration: todo.completed ? "line-through" : "none",
           textOverflow: "ellipsis",
-          width: "80%",
+          textAlign: "start",
+          maxWidth: "60%",
         }}
       />
-      <Box>
+      <Box display={"flex"}>
         <IconButton onClick={() => toggleComplete(todo.id, todo.completed)}>
           <CheckIcon color={todo.completed ? "success" : "disabled"} />
         </IconButton>

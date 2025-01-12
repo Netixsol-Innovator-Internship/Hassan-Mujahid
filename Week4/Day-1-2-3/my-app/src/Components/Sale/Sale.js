@@ -12,6 +12,7 @@ export default function sale() {
       alignItems={"center"}
       sx={{
         backgroundColor: "#AA00FF",
+        zIndex: "1",
       }}
     >
       <Typography
@@ -28,6 +29,27 @@ export default function sale() {
         src={Upto40}
         fontSize={"16px"}
         lineHeight={"32px"}
+      ></Box>
+      <Typography
+        variant="h6"
+        fontSize="16px"
+        lineHeight="32px"
+        align="ceneter"
+        fontWeight={"bold"}
+        sx={{
+          display: { xs: "none", sm: "none", md: "block" },
+        }}
+      >
+        Discount Sale
+      </Typography>
+      <Box
+        component={"img"}
+        src={Upto40}
+        fontSize={"16px"}
+        lineHeight={"32px"}
+        sx={{
+          display: { xs: "none", sm: "none", md: "block" },
+        }}
       ></Box>
     </Box>
   );

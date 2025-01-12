@@ -25,6 +25,30 @@ const theme = createTheme({
         },
       },
     },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "#fff",
+            },
+            "&:hover fieldset": {
+              borderColor: "#fff",
+            },
+            "&.Mui-focused fieldset": {
+              borderColor: "#fff",
+            },
+          },
+          "& .MuiInputBase-input": {
+            color: "#fff",
+            "&::placeholder": {
+              color: "#fff", // Placeholder text color
+              opacity: 1, // Ensure it doesn't become transparent
+            },
+          },
+        },
+      },
+    },
   },
   breakpoints: {
     values: {

@@ -1,32 +1,27 @@
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-export default function Heading() {
+export default function CardHeading() {
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      width={"100%"}
-      flexDirection={"column"}
-      gap={"8px"}
-    >
+    <Box display={"flex"} flexDirection={"column"} gap={1}>
       <Typography
-        fontWeight={"bold"}
+        variant="h6"
         fontSize={"16px"}
         lineHeight={"32px"}
+        textAlign={"center"}
+        fontWeight={"bold"}
         color="#5699FF"
       >
-        Featured
+        Newsletter
       </Typography>
       <Typography
         variant="h4"
-        fontWeight={"bold"}
         fontSize={"32px"}
         lineHeight={"48px"}
+        fontWeight={"bold"}
         textAlign={"center"}
       >
-        Hot Trending On This Week from Yorfy
+        You Do Not Want to Miss Out on this!
       </Typography>
       <Typography
         variant="body1"

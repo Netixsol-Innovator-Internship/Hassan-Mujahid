@@ -25,17 +25,20 @@ export default function Header() {
           sx={{
             justifyContent: "space-between",
             py: "16px",
-            px: "0",
+            px: { xs: 0, sm: 0, md: 0, lg: 0, xl: 0, "2xl": 0 },
           }}
         >
-          <Box display={"flex"} gap={{ xs: "8px" }}>
+          <Box display={"flex"} alignItems={"center"} gap={{ xs: "8px" }}>
             <Avatar
               src={Logo}
-              sx={{ height: { xs: "32px" }, width: { xs: "32px" } }}
+              sx={{
+                height: { xs: "32px", sm: "32px", md: "40px" },
+                width: { xs: "32px", sm: "32px", md: "40px" },
+              }}
             />
             <Typography
-              fontSize={"16px"}
-              lineHeight={"32px"}
+              fontSize={{ xs: "16px", sm: "16px", md: "24px" }}
+              lineHeight={{ xs: "32px", sm: "32px", md: "40px" }}
               fontWeight={"bold"}
               sx={{
                 textTransform: "uppercase",
@@ -51,8 +54,8 @@ export default function Header() {
               sx={{
                 textTransform: "none",
                 fontSize: { xs: "14px" },
-                fontWeight: "600",
                 lineHeight: { xs: "24px" },
+                fontWeight: "semiBold",
                 py: { xs: "8px" },
                 px: { xs: "32px" },
               }}

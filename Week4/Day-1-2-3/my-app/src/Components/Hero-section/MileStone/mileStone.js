@@ -3,7 +3,11 @@ import { Box, Typography } from "@mui/material";
 
 export default function mileStone() {
   return (
-    <Box display={"grid"} gridTemplateColumns="repeat(12, 1fr)">
+    <Box
+      display={"grid"}
+      maxWidth={{ md: "300px" }}
+      gridTemplateColumns="repeat(12, 1fr)"
+    >
       <Box
         gridColumn="span 4"
         display={"flex"}
@@ -14,12 +18,16 @@ export default function mileStone() {
         <Typography
           variant="h4"
           fontWeight={"bold"}
-          fontSize={"32px"}
-          lineHeight={"48px"}
+          fontSize={{ xs: "32px", sm: "32px", md: "40px" }}
+          lineHeight={{ xs: "48px", sm: "48px", md: "56px" }}
         >
           546
         </Typography>
-        <Typography fontSize={"12px"} lineHeight={"24px"} color="text.disabled">
+        <Typography
+          fontSize={{ xs: "12px", sm: "12px", md: "16px" }}
+          lineHeight={"24px"}
+          color="text.disabled"
+        >
           NFT Items
         </Typography>
       </Box>
@@ -34,12 +42,16 @@ export default function mileStone() {
         <Typography
           variant="h4"
           fontWeight={"bold"}
-          fontSize={"32px"}
-          lineHeight={"48px"}
+          fontSize={{ xs: "32px", sm: "32px", md: "40px" }}
+          lineHeight={{ xs: "48px", sm: "48px", md: "56px" }}
         >
           42
         </Typography>
-        <Typography fontSize={"12px"} lineHeight={"24px"} color="text.disabled">
+        <Typography
+          fontSize={{ xs: "12px", sm: "12px", md: "16px" }}
+          lineHeight={"24px"}
+          color="text.disabled"
+        >
           Owners
         </Typography>
       </Box>
@@ -52,12 +64,16 @@ export default function mileStone() {
         <Typography
           variant="h4"
           fontWeight={"bold"}
-          fontSize={"32px"}
-          lineHeight={"48px"}
+          fontSize={{ xs: "32px", sm: "32px", md: "40px" }}
+          lineHeight={{ xs: "48px", sm: "48px", md: "56px" }}
         >
           378
         </Typography>
-        <Typography fontSize={"12px"} lineHeight={"24px"} color="text.disabled">
+        <Typography
+          fontSize={{ xs: "12px", sm: "12px", md: "16px" }}
+          lineHeight={"24px"}
+          color="text.disabled"
+        >
           Items Sold
         </Typography>
       </Box>

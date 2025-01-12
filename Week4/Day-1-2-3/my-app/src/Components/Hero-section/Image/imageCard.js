@@ -4,14 +4,19 @@ import sixFaceImage from "../../../assets/images/six-faces-1.png";
 
 export default function imageCard() {
   return (
-    <Box sx={{ position: "relative", zIndex: 1, height: "461px" }}>
+    <Box
+      display={"flex"}
+      justifyContent={"center"}
+      sx={{ position: "relative", zIndex: 1, height: "461px" }}
+    >
       <Card
         elevation={10}
         sx={{
-          maxWidth: "280px",
-          height: { xs: "312px" },
+          maxWidth: { xs: "280px", sm: "280px", md: "252px" },
+          height: { xs: "312px", sm: "312px" },
           display: "flex",
           alignItems: "center",
+          justifyContent: "center",
           zIndex: "10",
           position: "relative",
         }}
@@ -28,14 +33,18 @@ export default function imageCard() {
       </Card>
       <Card
         sx={{
-          p: "120px 16px 16px 16px",
+          p: {
+            xs: "120px 16px 16px 16px",
+            sm: "120px 16px 16px",
+            md: "120px 24px 24px",
+          },
           backdropFilter: "blur(80px)",
           backgroundColor: "rgba(255, 255, 255, 0.05)",
           position: "absolute",
           bottom: "0%",
-          left: "-9%",
-          width: "328px",
-          height: "248px",
+          left: { xs: "-8.5%", sm: "-8.5%", md: "-9%" },
+          width: { xs: "328px", sm: "328px", md: "300px" },
+          height: { xs: "248px", sm: "248px", md: "256px" },
           zIndex: "1",
           border: "2px solid #1E50FF",
           borderRadius: "8px",

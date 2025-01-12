@@ -1,35 +1,28 @@
 import React from "react";
-import { Box, Typography, Container } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function Heading() {
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"center"}
-      alignItems={"center"}
-      width={"100%"}
-      flexDirection={"column"}
-      gap={"8px"}
-    >
+    <Box display={"flex"} flexDirection={"column"} gap={"8px"} width={"100%"}>
       <Typography
-        fontWeight={"bold"}
+        varaiant="h6"
+        color="#5699FF"
         fontSize={"16px"}
         lineHeight={"32px"}
-        color="#5699FF"
+        fontWeight={"bold"}
+        textAlign={"center"}
       >
-        Featured
+        Collection
       </Typography>
       <Typography
-        variant="h4"
         fontWeight={"bold"}
-        fontSize={"32px"}
+        fontSize="32px"
         lineHeight={"48px"}
         textAlign={"center"}
       >
-        Hot Trending On This Week from Yorfy
+        Yorfy NFT Collections
       </Typography>
       <Typography
-        variant="body1"
         fontSize={"16px"}
         lineHeight={"32px"}
         textAlign={"center"}

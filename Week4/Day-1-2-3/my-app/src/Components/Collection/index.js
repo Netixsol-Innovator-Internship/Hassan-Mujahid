@@ -10,12 +10,13 @@ export default function Collection() {
       justifyContent={"center"}
       flexDirection={"column"}
       alignItems={"center"}
-      gap={"16px"}
+      gap={{ xs: 2, xl: 5 }}
     >
       <Heading />
       <Grid2
         container
         spacing={2}
+        width={"100%"}
         justifyContent={"center"}
         alignItems={"center"}
       >
@@ -23,13 +24,16 @@ export default function Collection() {
       </Grid2>
       <Button
         variant="outlined"
-        fullWidth
+        fullWidth={{ xs: true, sm: true, md: false }}
         color="white"
         sx={{
+          textTransform: "none",
           fontSize: "16px",
           lineHeight: "32px",
           fontWeight: "semiBold",
           borderRadius: "8px",
+          py: "8px",
+          px: "40px",
         }}
       >
         View an OpenSea

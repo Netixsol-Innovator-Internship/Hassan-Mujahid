@@ -9,15 +9,16 @@ export default function C2() {
         flexDirection: "column",
         justifyContent: "flex-start", // Horizontal alignment
         alignItems: "flex-start", // Vertical alignment
-        gap: 1,
+        gap: { xs: 1, sm: 1, md: 2 },
         width: "272px",
       }}
     >
       <Typography
         variant="h5"
         fontWeight={"bold"}
-        fontSize={"24px"}
-        lineHeight="40px"
+        fontSize={{ xs: "24px", xl: "40px" }}
+        lineHeight={{ xs: "40px", xl: "56px" }}
+        textAlign={{ xl: "center" }}
       >
         Interesting with This Item?
       </Typography>
@@ -31,7 +32,7 @@ export default function C2() {
         tempor incididunt ut labore et dolore magna aliqua.
       </Typography>
       <Button
-        fullWidth
+        fullWidth={{ xs: true, sm: true, md: false }}
         variant="contained"
         sx={{
           textTransform: "none",

@@ -11,7 +11,7 @@ export default function Highlight() {
       alignItems={"center"}
       width={"100%"}
       flexDirection={"column"}
-      gap={"8px"}
+      gap={{ xs: 1, sm: 1, md: 1, lg: 2, xl: 3 }}
     >
       <Heading />
       <HighlightNFT />

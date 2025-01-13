@@ -2,20 +2,27 @@ import React from "react";
 import { Card, Avatar, Box, Typography, IconButton } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 export default function User() {
-  const opacityValues = [100, 70, 50];
+  const opacityValues = [
+    { opacity: 100, top: "", left: "", position: "block" },
+    { opacity: 70, top: 104, left: 120, position: "absolute" },
+    { opacity: 50, top: 208, left: 240, position: "absolute" },
+  ];
 
-  return opacityValues.map((opacity) => {
+  return opacityValues.map((styles) => {
     return (
       <Card
         sx={{
           bgcolor: "#081956",
-          width: "100%",
+          width: { xs: "100%", sm: "100%", md: "65%" },
           p: 2,
           borderRadius: "8px",
           boxShadow: "0px 24px 80px 0px #000000CC",
-          opacity: `${opacity}%`,
+          opacity: `${styles.opacity}%`,
+          top: `${styles.top}px`,
+          left: `${styles.left}px`,
+          position: { xs: "block", sm: "block", md: `${styles.position}` },
         }}
-        key={opacity}
+        key={styles.opacity}
       >
         <Box display={"flex"} justifyContent={"space-between"}>
           <Box

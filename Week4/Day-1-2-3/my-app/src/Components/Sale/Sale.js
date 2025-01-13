@@ -17,23 +17,42 @@ export default function sale() {
     >
       <Typography
         variant="h6"
-        fontSize="16px"
-        lineHeight="32px"
+        fontSize={{
+          xs: "16px",
+          sm: "16px",
+          md: "16px",
+          lg: "16px",
+          xl: "32px",
+        }}
+        lineHeight={{
+          xs: "32px",
+          sm: "32px",
+          md: "32px",
+          lg: "32px",
+          xl: "48px",
+        }}
         align="ceneter"
         fontWeight={"bold"}
       >
         Discount Sale
       </Typography>
-      <Box
-        component={"img"}
-        src={Upto40}
-        fontSize={"16px"}
-        lineHeight={"32px"}
-      ></Box>
+      <Box component={"img"} src={Upto40} height={{ xl: "32px" }}></Box>
       <Typography
         variant="h6"
-        fontSize="16px"
-        lineHeight="32px"
+        fontSize={{
+          xs: "16px",
+          sm: "16px",
+          md: "16px",
+          lg: "16px",
+          xl: "32px",
+        }}
+        lineHeight={{
+          xs: "32px",
+          sm: "32px",
+          md: "32px",
+          lg: "32px",
+          xl: "48px",
+        }}
         align="ceneter"
         fontWeight={"bold"}
         sx={{
@@ -45,8 +64,7 @@ export default function sale() {
       <Box
         component={"img"}
         src={Upto40}
-        fontSize={"16px"}
-        lineHeight={"32px"}
+        height={{ xl: "32px" }}
         sx={{
           display: { xs: "none", sm: "none", md: "block" },
         }}

@@ -10,15 +10,35 @@ export default function Logo() {
     <Box
       display={"flex"}
       flexWrap={"wrap"}
-      gap={3}
+      gap={{ xs: 3, sm: 3, md: "58px" }}
       width={"100%"}
       justifyContent={"center"}
       alignItems={"center"}
     >
-      <Box component={"img"} src={Logo1} width={"120px"} height={"24px"}></Box>
-      <Box component={"img"} src={Logo2} width={"128px"} height={"24px"}></Box>
-      <Box component={"img"} src={Logo3} width={"136px"} height={"24px"}></Box>
-      <Box component={"img"} src={Logo4} width={"96px"} height={"24px"}></Box>
+      <Box
+        component={"img"}
+        src={Logo1}
+        width={{ xs: "120px", sm: "120px", md: "240px" }}
+        height={{ xs: "24px", sm: "24px", md: "48px" }}
+      ></Box>
+      <Box
+        component={"img"}
+        src={Logo2}
+        width={{ xs: "128px", sm: "128px", md: "256px" }}
+        height={{ xs: "24px", sm: "24px", md: "48px" }}
+      ></Box>
+      <Box
+        component={"img"}
+        src={Logo3}
+        width={{ xs: "136px", sm: "136px", md: "272px" }}
+        height={{ xs: "24px", sm: "24px", md: "48px" }}
+      ></Box>
+      <Box
+        component={"img"}
+        src={Logo4}
+        width={{ xs: "96px", sm: "96px", md: "192px" }}
+        height={{ xs: "24px", sm: "24px", md: "48px" }}
+      ></Box>
     </Box>
   );
 }

@@ -8,19 +8,23 @@ import Logo from "../../../assets/logos/Logo.png";
 export default function NFT() {
   const data = [
     { img: SixFaces2, text: "YorNoose #432" },
-    { img: SixFaces3, text: "YorNoose #332" },
-    { img: SixFaces4, text: "YorNoose #765" },
+    { img: SixFaces3, text: "YorHayr #332" },
+    { img: SixFaces4, text: "YorMwoth #765" },
   ];
   return data.map((item) => {
     return (
-      <Grid2 xs={12} sm={6} md={4} key={item.text}>
+      <Grid2 xs={12} md={6} xl={4} key={item.text} zIndex={1}>
         <Box
           border={"1px solid #1E50FF"}
           borderRadius={"8px"}
-          p={"16px"}
+          p={{ xs: 2, xl: 3 }}
           display={"flex"}
           flexDirection={"column"}
           gap="24px"
+          sx={{
+            height: { xs: "320px", sm: "320px", md: "408px", xl: "432px" },
+            width: { md: "324px", xl: "368px" },
+          }}
         >
           <Card
             sx={{
@@ -28,20 +32,27 @@ export default function NFT() {
               boxShadow: "0px 20px 26px -1px rgba(0,0,0,0.7)",
             }}
           >
-            <CardMedia component={"img"} src={item.img} height={"320px"} />
+            <CardMedia
+              component={"img"}
+              src={item.img}
+              sx={{
+                height: { xs: "320px", sm: "320px", md: "320px" },
+                width: { md: "292px" },
+              }}
+            />
           </Card>
-          <Box display={"flex"} gap={"16px"}>
+          <Box display={"flex"} gap={"16px"} alignItems={"center"}>
             <Avatar
               src={Logo}
               sx={{
-                height: "32px",
-                width: "32px",
+                height: { xs: "32px", xl: "40px" },
+                width: { xs: "32px", xl: "40px" },
               }}
             />
             <Typography
               variant="body1"
-              fontSize={"16px"}
-              lineHeight={"32px"}
+              fontSize={{ xs: "16px", xl: "24px" }}
+              lineHeight={{ xs: "32px", xl: "40px" }}
               fontWeight={"bold"}
             >
               {item.text}

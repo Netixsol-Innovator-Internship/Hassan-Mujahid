@@ -9,13 +9,19 @@ export default function Top() {
       justifyContent={"space-between"}
       alignItems={"center"}
     >
-      <Box display={"flex"} gap={1}>
-        <Avatar src={Logo1} sx={{ width: "32px", height: "32px" }} />
+      <Box display={"flex"} alignItems={"center"} gap={1}>
+        <Avatar
+          src={Logo1}
+          sx={{
+            width: { xs: "32px", sm: "32px", md: "40px" },
+            height: { xs: "32px", sm: "32px", md: "40px" },
+          }}
+        />
         <Typography
           variant="h6"
-          fontSize={"16px"}
+          fontSize={{ xs: "16px", sm: "16px", md: "24px" }}
           fontWeight={"bold"}
-          lineHeight={"32px"}
+          lineHeight={{ xs: "32px", sm: "32px", md: "40px" }}
           textTransform={"uppercase"}
         >
           yorfy
@@ -26,8 +32,8 @@ export default function Top() {
           border={"1px solid white"}
           fontSize={"12px"}
           lineHeight={"32px"}
-          height={"32px"}
-          width={"32px"}
+          height={{ xs: "32px", sm: "32px", md: "40px" }}
+          width={{ xs: "32px", sm: "32px", md: "40px" }}
           p={"4px"}
           borderRadius={"100%"}
           textAlign={"center"}
@@ -41,8 +47,8 @@ export default function Top() {
           border={"1px solid white"}
           fontSize={"12px"}
           lineHeight={"32px"}
-          height={"32px"}
-          width={"32px"}
+          height={{ xs: "32px", sm: "32px", md: "40px" }}
+          width={{ xs: "32px", sm: "32px", md: "40px" }}
           p={"4px"}
           borderRadius={"100%"}
           textAlign={"center"}
@@ -56,8 +62,8 @@ export default function Top() {
           border={"1px solid white"}
           fontSize={"12px"}
           lineHeight={"32px"}
-          height={"32px"}
-          width={"32px"}
+          height={{ xs: "32px", sm: "32px", md: "40px" }}
+          width={{ xs: "32px", sm: "32px", md: "40px" }}
           p={"4px"}
           borderRadius={"100%"}
           textAlign={"center"}
@@ -71,8 +77,8 @@ export default function Top() {
           border={"1px solid white"}
           fontSize={"12px"}
           lineHeight={"32px"}
-          height={"32px"}
-          width={"32px"}
+          height={{ xs: "32px", sm: "32px", md: "40px" }}
+          width={{ xs: "32px", sm: "32px", md: "40px" }}
           p={"4px"}
           borderRadius={"100%"}
           textAlign={"center"}

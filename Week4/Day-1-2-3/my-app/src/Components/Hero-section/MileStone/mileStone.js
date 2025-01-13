@@ -5,7 +5,7 @@ export default function mileStone() {
   return (
     <Box
       display={"grid"}
-      maxWidth={{ md: "300px" }}
+      maxWidth={{ md: "300px", lg: "380px", "2xl": "420px" }}
       gridTemplateColumns="repeat(12, 1fr)"
     >
       <Box

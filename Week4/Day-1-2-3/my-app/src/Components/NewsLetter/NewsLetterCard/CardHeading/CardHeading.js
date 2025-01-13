@@ -3,7 +3,12 @@ import { Box, Typography } from "@mui/material";
 
 export default function CardHeading() {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={1}>
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ xs: 1, sm: 1, md: 2 }}
+      maxWidth={{ xl: "752px" }}
+    >
       <Typography
         variant="h6"
         fontSize={"16px"}
@@ -16,8 +21,8 @@ export default function CardHeading() {
       </Typography>
       <Typography
         variant="h4"
-        fontSize={"32px"}
-        lineHeight={"48px"}
+        fontSize={{ xs: "32px", xl: "56px" }}
+        lineHeight={{ xs: "48px", xl: "72px" }}
         fontWeight={"bold"}
         textAlign={"center"}
       >

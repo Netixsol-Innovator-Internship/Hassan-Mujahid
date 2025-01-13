@@ -5,7 +5,11 @@ import { Box } from "@mui/material";
 
 export default function Collaboration() {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={"24px"}>
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ xs: 3, sm: 3, md: 5 }}
+    >
       <Heading />
       <Logo />
     </Box>

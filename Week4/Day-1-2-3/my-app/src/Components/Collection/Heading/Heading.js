@@ -3,7 +3,13 @@ import { Box, Typography } from "@mui/material";
 
 export default function Heading() {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={"8px"} width={"100%"}>
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ xs: 1, xl: 2 }}
+      width={"100%"}
+      maxWidth={{ md: "664px", xl: "756px" }}
+    >
       <Typography
         varaiant="h6"
         color="#5699FF"
@@ -16,8 +22,8 @@ export default function Heading() {
       </Typography>
       <Typography
         fontWeight={"bold"}
-        fontSize="32px"
-        lineHeight={"48px"}
+        fontSize={{ xs: "32px", xl: "56px" }}
+        lineHeight={{ xs: "48px", xl: "72px" }}
         textAlign={"center"}
       >
         Yorfy NFT Collections

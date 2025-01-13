@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Container,
-  Card,
-  Stack,
-  Grid2,
-} from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 import Heading from "./Heading/Heading";
 import MileStone from "./MileStone/mileStone";
 import ImageCard from "./Image/imageCard";
@@ -22,12 +14,16 @@ const HeroSection = () => {
       alignItems={"center"}
     >
       {/* First Grid2 Item */}
-      <Grid2 xs={12} sm={12} md={6} alignItems={"center"}>
-        <Box
-          display={"flex"}
-          flexDirection={"column"}
-          sx={{ gap: 2, maxWidth: { md: "324px" } }}
-        >
+      <Grid2
+        xs={12}
+        sm={12}
+        md={6}
+        alignItems={"center"}
+        sx={{
+          maxWidth: { md: "50%" },
+        }}
+      >
+        <Box display={"flex"} flexDirection={"column"} sx={{ gap: 2 }}>
           <Heading />
           <MileStone />
         </Box>
@@ -42,9 +38,9 @@ const HeroSection = () => {
         sx={{
           width: { xs: "100%", sm: "100%", md: "auto" },
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "end",
           height: "100%",
-          mx: { md: "auto" },
+          mx: { xs: "auto", sm: "auto" },
         }}
       >
         <Box display={"flex"} justifyContent={"center"}>

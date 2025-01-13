@@ -9,7 +9,8 @@ export default function Heading() {
       alignItems={"center"}
       width={"100%"}
       flexDirection={"column"}
-      gap={"8px"}
+      maxWidth={{ md: "664px", xl: "756px" }}
+      gap={{ xs: 1, sm: 1, md: 2 }}
     >
       <Typography
         fontWeight={"bold"}
@@ -22,8 +23,20 @@ export default function Heading() {
       <Typography
         variant="h4"
         fontWeight={"bold"}
-        fontSize={"32px"}
-        lineHeight={"48px"}
+        fontSize={{
+          xs: "32px",
+          sm: "32px",
+          md: "32px",
+          lg: "32px",
+          xl: "56px",
+        }}
+        lineHeight={{
+          xs: "48px",
+          sm: "48px",
+          md: "48px",
+          lg: "48px",
+          xl: "72px",
+        }}
         textAlign={"center"}
       >
         Hot Trending On This Week from Yorfy

@@ -3,7 +3,11 @@ import { Box, Typography } from "@mui/material";
 
 export default function Heading() {
   return (
-    <Box display={"flex"} flexDirection={"column"} gap={1}>
+    <Box
+      display={"flex"}
+      flexDirection={"column"}
+      gap={{ xs: 1, sm: 1, md: 2 }}
+    >
       <Typography
         fontSize={"16px"}
         lineHeight={"32px"}
@@ -15,8 +19,8 @@ export default function Heading() {
       </Typography>
       <Typography
         variant="h4"
-        fontSize={"32px"}
-        lineHeight={"48px"}
+        fontSize={{ xs: "32px", xl: "72px" }}
+        lineHeight={{ xs: "48px", xl: "72px" }}
         textAlign={"center"}
         fontWeight={"bold"}
       >

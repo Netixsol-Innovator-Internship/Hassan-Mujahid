@@ -1,4 +1,4 @@
-# Frontend Mentor - GitHub user search app solution
+# Yorfy NFT App
 
 This is a solution to the [Yorfy Project](https://www.figma.com/design/2nZgUiruP4TBzKAxCXn6Cb/YORFY---NFT-Portfolio-Website-UI-Kit?node-id=0-1).
 

@@ -113,6 +113,7 @@ export default function imageCard() {
               fontSize: "16px",
               lineHeight: "32px",
               textWrap: { xl: "nowrap" },
+              borderRadius: "8px",
             }}
           >
             Buy an OpenSea
@@ -135,6 +136,7 @@ export default function imageCard() {
               color: "#fff",
               borderColor: "white",
               textWrap: { xl: "nowrap" },
+              borderRadius: "8px",
             }}
           >
             Know More

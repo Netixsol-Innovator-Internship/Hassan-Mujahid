@@ -12,12 +12,11 @@ export default function NavMenu() {
       <Box
         display={"flex"}
         alignItems={"center"}
+        gap={0}
         sx={{
           cursor: "pointer",
-          "&:hover": {
-            "& button svg": {
-              color: "#fff",
-            },
+          "&:hover .MuiSvgIcon-root": {
+            color: "white",
           },
         }}
       >
@@ -35,9 +34,7 @@ export default function NavMenu() {
         >
           Home
         </Box>
-        <IconButton>
-          <ArrowDropDownIcon sx={{ color: "text.disabled" }} />
-        </IconButton>
+        <ArrowDropDownIcon sx={{ color: "#dedede" }} />
       </Box>
       <Box
         component={"p"}
@@ -105,6 +102,9 @@ export default function NavMenu() {
         gap={0}
         sx={{
           cursor: "pointer",
+          "&:hover .MuiSvgIcon-root": {
+            color: "white",
+          },
         }}
       >
         <Box
@@ -121,9 +121,7 @@ export default function NavMenu() {
         >
           Pages
         </Box>
-        <IconButton>
-          <ArrowDropDownIcon sx={{ color: "white" }} />
-        </IconButton>
+        <ArrowDropDownIcon sx={{ color: "#dedede" }} />
       </Box>
     </Box>
   );

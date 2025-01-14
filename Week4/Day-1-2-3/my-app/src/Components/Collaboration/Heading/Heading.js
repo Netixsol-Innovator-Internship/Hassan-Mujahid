@@ -19,7 +19,7 @@ export default function Heading() {
       </Typography>
       <Typography
         variant="h4"
-        fontSize={{ xs: "32px", xl: "72px" }}
+        fontSize={{ xs: "32px", xl: "56px" }}
         lineHeight={{ xs: "48px", xl: "72px" }}
         textAlign={"center"}
         fontWeight={"bold"}

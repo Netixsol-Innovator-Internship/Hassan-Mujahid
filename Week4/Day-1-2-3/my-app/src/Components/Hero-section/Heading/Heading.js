@@ -36,7 +36,6 @@ export default function Heading() {
         Now Available, Meet Yorfy NFT Collection ⭐️
       </Typography>
       <Typography
-        component="p"
         variant="body1"
         color="text.disabled"
         fontSize={{ xs: "16px", "2xl": "20px" }}

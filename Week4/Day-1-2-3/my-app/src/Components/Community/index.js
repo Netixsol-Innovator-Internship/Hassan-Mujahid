@@ -17,7 +17,7 @@ export default function Community() {
       >
         <Box
           display={"flex"}
-          width={{ xs: "80%", xl: "504px" }}
+          width={{ xs: "80%", xl: "auto" }}
           flexDirection={"column"}
           gap={2}
           sx={{
@@ -52,6 +52,7 @@ export default function Community() {
               fontWeight: "semiBold",
               py: "8px",
               px: "40px",
+              borderRadius: "8px",
             }}
           >
             Join Our Discord

@@ -10,9 +10,12 @@ export default function sale() {
       display={"flex"}
       justifyContent={"space-around"}
       alignItems={"center"}
+      gap={2}
       sx={{
         backgroundColor: "#AA00FF",
         zIndex: "1",
+        overflowX: "auto",
+        whiteSpace: "nowrap",
       }}
     >
       <Typography
@@ -31,12 +34,18 @@ export default function sale() {
           lg: "32px",
           xl: "48px",
         }}
-        align="ceneter"
+        textAlign={"center"}
+        noWrap
+        minWidth={{ xs: "156px", xl: "auto" }}
         fontWeight={"bold"}
       >
         Discount Sale
       </Typography>
-      <Box component={"img"} src={Upto40} height={{ xl: "32px" }}></Box>
+      <Box
+        component={"img"}
+        src={Upto40}
+        height={{ xs: "16px", xl: "32px" }}
+      ></Box>
       <Typography
         variant="h6"
         fontSize={{
@@ -53,20 +62,28 @@ export default function sale() {
           lg: "32px",
           xl: "48px",
         }}
-        align="ceneter"
+        textAlign={"center"}
+        noWrap
+        minWidth={{ xs: "156px", xl: "auto" }}
         fontWeight={"bold"}
-        sx={{
-          display: { xs: "none", sm: "none", md: "block" },
-        }}
+        sx={
+          {
+            // display: { xs: "none", sm: "none", md: "block" },
+          }
+        }
       >
         Discount Sale
       </Typography>
       <Box
         component={"img"}
         src={Upto40}
-        height={{ xl: "32px" }}
+        height={{ xs: "16px", xl: "32px" }}
+        width={"auto"}
         sx={{
-          display: { xs: "none", sm: "none", md: "block" },
+          // display: { xs: "none", sm: "none", md: "block" },
+          objectFit: "contain",
+          imageRendering: "auto",
+          borderRadius: "4px",
         }}
       ></Box>
     </Box>

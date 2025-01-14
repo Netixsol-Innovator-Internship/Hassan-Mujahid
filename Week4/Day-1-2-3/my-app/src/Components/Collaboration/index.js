@@ -8,6 +8,7 @@ export default function Collaboration() {
     <Box
       display={"flex"}
       flexDirection={"column"}
+      width={"100%"}
       gap={{ xs: 3, sm: 3, md: 5 }}
     >
       <Heading />

@@ -13,7 +13,7 @@ export default function NFT() {
   ];
   return data.map((item) => {
     return (
-      <Grid2 xs={12} md={6} xl={4} key={item.text} zIndex={1}>
+      <Grid2 xs={12} md={6} lg={4} key={item.text} zIndex={1}>
         <Box
           border={"1px solid #1E50FF"}
           borderRadius={"8px"}

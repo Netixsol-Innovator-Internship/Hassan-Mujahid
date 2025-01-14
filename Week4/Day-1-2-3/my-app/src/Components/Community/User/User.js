@@ -3,9 +3,21 @@ import { Card, Avatar, Box, Typography, IconButton } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 export default function User() {
   const opacityValues = [
-    { opacity: 100, top: "", left: "", position: "block" },
-    { opacity: 70, top: 104, left: 120, position: "absolute" },
-    { opacity: 50, top: 208, left: 240, position: "absolute" },
+    { opacity: 100, top: "", left: "", zIndex: 10, position: "block" },
+    {
+      opacity: 70,
+      top: { xs: 104, xl: 104 },
+      left: { xs: 120, xl: 40 },
+      zIndex: 5,
+      position: "absolute",
+    },
+    {
+      opacity: 50,
+      top: { xs: 208, xl: 208 },
+      left: { xs: 240, xl: 80 },
+      zIndex: 1,
+      position: "absolute",
+    },
   ];
 
   return opacityValues.map((styles) => {
@@ -13,13 +25,14 @@ export default function User() {
       <Card
         sx={{
           bgcolor: "#081956",
-          width: { xs: "100%", sm: "100%", md: "65%" },
+          width: { xs: "100%", sm: "100%", md: "65%", xl: "424px" },
           p: 2,
           borderRadius: "8px",
           boxShadow: "0px 24px 80px 0px #000000CC",
+          zIndex: `${styles.zIndex}`,
           opacity: `${styles.opacity}%`,
-          top: `${styles.top}px`,
-          left: `${styles.left}px`,
+          top: { xs: `${styles.top.xs}px`, xl: `${styles.top.xl}px` },
+          left: { xs: `${styles.left.xs}px`, xl: `${styles.left.xl}px` },
           position: { xs: "block", sm: "block", md: `${styles.position}` },
         }}
         key={styles.opacity}

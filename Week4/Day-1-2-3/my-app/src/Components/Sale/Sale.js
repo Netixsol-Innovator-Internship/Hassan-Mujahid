@@ -11,6 +11,7 @@ export default function sale() {
       justifyContent={"space-around"}
       alignItems={"center"}
       gap={2}
+      pr={2.5}
       sx={{
         backgroundColor: "#AA00FF",
         zIndex: "1",
@@ -78,7 +79,7 @@ export default function sale() {
         component={"img"}
         src={Upto40}
         height={{ xs: "16px", xl: "32px" }}
-        width={"auto"}
+        width={{ xl: "auto" }}
         sx={{
           // display: { xs: "none", sm: "none", md: "block" },
           objectFit: "contain",

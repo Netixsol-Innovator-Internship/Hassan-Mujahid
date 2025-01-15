@@ -35,6 +35,7 @@ export default function C2() {
         fullWidth={{ xs: true, sm: true, md: false }}
         variant="contained"
         sx={{
+          width: { xs: "100%", md: "auto" },
           textTransform: "none",
           fontSize: "16px",
           lineHeight: "32px",

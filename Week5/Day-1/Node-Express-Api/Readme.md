@@ -26,8 +26,8 @@ This project is a simple CRUD (Create, Read, Update, Delete) backend API built w
 1. **Clone the repository**:
 
    ```bash
-   git clone <repository_url>
-   cd <repository_folder>
+   git clone <Node-Express-Api>
+   cd <Node-Express-Api>
    ```
 
 2. **Install dependencies**:
@@ -39,16 +39,16 @@ This project is a simple CRUD (Create, Read, Update, Delete) backend API built w
 3. **Run the server**:
 
    ```bash
-   node index.js
+   npm start
    ```
 
-4. The server will start at `http://localhost:3000` (default port).
+4. The server will start at `http://localhost:5000` .
 
 ---
 
 ## API Endpoints
 
-### Base URL: `http://localhost:3000`
+### Base URL: `http://localhost:5000`
 
 #### 1. **Create User**
 

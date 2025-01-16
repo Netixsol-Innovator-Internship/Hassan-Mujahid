@@ -13,13 +13,11 @@ function JobList() {
     setJobs(data);
   }, []);
 
-  const filteredJobs = jobs
-    .filter((jobs) => {
-      if (filterTags.length === 0) return jobs;
-      const jobTags = [jobs.role, jobs.level, ...jobs.languages, ...jobs.tools];
-      return filterTags.every((tag) => jobTags.includes(tag));
-    })
-    .map((job) => job);
+  const filteredJobs = jobs.filter((jobs) => {
+    if (filterTags.length === 0) return jobs;
+    const jobTags = [jobs.role, jobs.level, ...jobs.languages, ...jobs.tools];
+    return filterTags.every((tag) => jobTags.includes(tag));
+  });
 
   return (
     <Box

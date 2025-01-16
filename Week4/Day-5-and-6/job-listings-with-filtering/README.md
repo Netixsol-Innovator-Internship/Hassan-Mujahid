@@ -22,8 +22,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week4/Day-5-and-6/job-listings-with-filtering)
-- Live Site URL: [Add live site URL here](https://job-listings-solution-by-hassan.netlify.app/)
+- Solution URL: [Solution-URL](https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Week4/Day-5-and-6/job-listings-with-filtering)
+- Live Site URL: [Live-site](https://job-listings-solution-by-hassan.netlify.app/)
 
 ## My process
 

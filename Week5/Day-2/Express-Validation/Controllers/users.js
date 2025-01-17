@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
+import { validationResult } from "express-validator";
 
 let users = [];
 
@@ -8,6 +9,13 @@ export const getUsers = (req, res) => {
 
 export const createUsers = (req, res) => {
   const user = req.body;
+  const errors = validationResult(req);
+  const errorMessages = errors.array().map((err) => err.msg);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errorMessages });
+  }
+
   users.push({ ...user, id: uuidv4() });
   res.send(`User with the name ${user.firstName} added to the database!`);
 };
@@ -28,6 +36,12 @@ export const deleteUser = (req, res) => {
 export const updateUser = (req, res) => {
   const { id } = req.params;
   const { firstName, lastName, age } = req.body;
+  const errors = validationResult(req);
+  const errorMessages = errors.array().map((err) => err.msg);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errorMessages });
+  }
 
   const user = users.find((user) => user.id === id);
   if (firstName) user.firstName = firstName;

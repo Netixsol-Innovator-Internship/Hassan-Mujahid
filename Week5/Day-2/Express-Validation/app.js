@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 const PORT = 8000;
 
-app.use("/users", router);
+app.use("/", router);
 
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)

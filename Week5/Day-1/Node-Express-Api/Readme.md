@@ -90,7 +90,7 @@ This project is a simple CRUD (Create, Read, Update, Delete) backend API built w
 
 #### 3. **Read Single User**
 
-- **Endpoint**: `GET /users/:id`
+- **Endpoint**: `GET /user/:id`
 - **Description**: Retrieves a user by their ID.
 - **Response** (Example):
   ```json
@@ -104,7 +104,7 @@ This project is a simple CRUD (Create, Read, Update, Delete) backend API built w
 
 #### 4. **Update User**
 
-- **Endpoint**: `PUT /users/:id`
+- **Endpoint**: `PATCH /user/:id`
 - **Description**: Updates user details by ID.
 - **Request Body** (JSON):
   ```json
@@ -126,7 +126,7 @@ This project is a simple CRUD (Create, Read, Update, Delete) backend API built w
 
 #### 5. **Delete User**
 
-- **Endpoint**: `DELETE /users/:id`
+- **Endpoint**: `DELETE /user/:id`
 - **Description**: Deletes a user by their ID.
 - **Response**:
   ```json

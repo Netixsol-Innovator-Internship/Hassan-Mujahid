@@ -5,9 +5,9 @@ import router from "./routes/users.js";
 const app = express();
 
 app.use(bodyParser.json());
-const PORT = 5000;
+const PORT = 8000;
 
-app.use("/", router);
+app.use("/users", router);
 
 app.listen(PORT, () =>
   console.log(`Server running on port: http://localhost:${PORT}`)

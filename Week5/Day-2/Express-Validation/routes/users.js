@@ -32,9 +32,9 @@ router.post(
     check("age")
       .notEmpty()
       .withMessage("Age cannot be empty")
-      .isInt({ min: 10, max: 100 })
+      .isInt({ min: 1, max: 100 })
       .withMessage(
-        "Age should be greater than 10 and less than or equal to 100"
+        "Age should be greater than 0 and less than or equal to 100"
       ),
   ],
   createUsers
@@ -68,9 +68,9 @@ router.patch(
       .optional()
       .notEmpty()
       .withMessage("Age cannot be empty")
-      .isInt({ min: 10, max: 100 })
+      .isInt({ min: 1, max: 100 })
       .withMessage(
-        "Age should be greater than 10 and less than or equal to 100"
+        "Age should be greater than 0 and less than or equal to 100"
       ),
   ],
   updateUser

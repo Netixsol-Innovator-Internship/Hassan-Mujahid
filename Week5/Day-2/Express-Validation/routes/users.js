@@ -21,12 +21,16 @@ router.post(
       .trim()
       .notEmpty()
       .withMessage("firstName cannot be empty")
+      .isString()
+      .withMessage("firstName should be a string")
       .isLength({ min: 3, max: 15 })
       .withMessage("firstName should be 3 to 15 characters"),
     check("lastName")
       .trim()
       .notEmpty()
       .withMessage("lastName cannot be empty")
+      .isString()
+      .withMessage("lastName should be a string")
       .isLength({ min: 3, max: 15 })
       .withMessage("lastName should be 3 to 15 characters"),
     check("age")
@@ -55,6 +59,8 @@ router.patch(
       .trim()
       .notEmpty()
       .withMessage("firstName cannot be empty")
+      .isString()
+      .withMessage("lastName should be a string")
       .isLength({ min: 3, max: 15 })
       .withMessage("firstName should be 3 to 15 characters"),
     check("lastName")
@@ -62,6 +68,8 @@ router.patch(
       .trim()
       .notEmpty()
       .withMessage("lastName cannot be empty")
+      .isString()
+      .withMessage("lastName should be a string")
       .isLength({ min: 3, max: 15 })
       .withMessage("lastName should be 3 to 15 characters"),
     check("age")

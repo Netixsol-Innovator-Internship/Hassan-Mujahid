@@ -168,7 +168,7 @@ const productSchema = Schema({
   - `price`: Product price (required).
   - `stock`: Quantity available in stock (required).
   - `storeId`: Reference to the store selling this product.
-  - `Image`: Handle and store uploaded image in database.
+  - `Image`: Handle and store uploaded image from the device in database.
   - `createdAt`: Timestamp of product creation.
 
 ---

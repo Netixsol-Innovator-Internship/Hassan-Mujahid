@@ -25,7 +25,6 @@ const orderSchema = Schema({
       required: true,
       ref: "Buyer",
     },
-    ref: "User",
   },
   createdAt: {
     type: Date,

@@ -12,7 +12,6 @@ export default function AddTransaction() {
 
     const transaction = {
       text,
-      id: Math.abs(Math.random() * 100000000),
       amount: +amount,
     };
 
@@ -39,7 +38,7 @@ export default function AddTransaction() {
           </label>
           <input
             type="number"
-            value={amount}
+            value={isNaN(amount) || amount === 0 ? "" : amount}
             onChange={(e) => setAmount(parseInt(e.target.value))}
             placeholder="Enter amount..."
           />

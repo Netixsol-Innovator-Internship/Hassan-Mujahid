@@ -73,23 +73,33 @@ const orderSchema = Schema({
       },
     },
   ],
+  status: {
+    type: String,
+    default: "Pending",
+    enum: ["Pending", "Completed", "Canceled"],
+  },
   user: {
     _id: {
       type: mongoose.SchemaTypes.ObjectId,
       required: true,
       ref: "Buyer",
     },
-    name: {
-      type: String,
-      required: true,
-    },
+    ref: "User",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
   },
 });
+
+module.exports = mongoose.model("Order", orderSchema);
 ```
 
 - **Fields**:
   - `items`: Array of products and their quantities.
-  - `user`: Contains buyer's ID and name.
+  - `status`: Status of the order (`Pending` by default, options are `Pending`,`Completed` and `Canceled`).
+  - `user`: Contains buyer's ID and a reference to the user.
+  - `createdAt`: Timestamp of order creation.
 
 ---
 
@@ -140,7 +150,7 @@ const productSchema = Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   stock: {
@@ -157,6 +167,8 @@ const productSchema = Schema({
     default: Date.now(),
   },
 });
+
+module.exports = mongoose.model("Product", productSchema);
 ```
 
 - **Fields**:

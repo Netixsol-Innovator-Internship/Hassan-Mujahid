@@ -8,7 +8,7 @@ const productSchema = Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   stock: {
@@ -21,8 +21,8 @@ const productSchema = Schema({
     ref: "Store",
   },
   Image: {
-    data: Buffer,
-    ContentType: String,
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Image",
   },
   createdAt: {
     type: Date,

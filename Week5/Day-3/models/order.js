@@ -14,16 +14,22 @@ const orderSchema = Schema({
       },
     },
   ],
+  status: {
+    type: String,
+    default: "Pending",
+    enum: ["Pending", "Completed", "Canceled"],
+  },
   user: {
     _id: {
       type: mongoose.SchemaTypes.ObjectId,
       required: true,
       ref: "Buyer",
     },
-    name: {
-      type: String,
-      requied: true,
-    },
+    ref: "User",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

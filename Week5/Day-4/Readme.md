@@ -88,7 +88,7 @@ const orderSchema = Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 
@@ -127,7 +127,7 @@ const ownerSchema = Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 ```
@@ -164,7 +164,7 @@ const productSchema = Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 
@@ -199,7 +199,7 @@ const storeSchema = Schema({
   },
   createdAt: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 ```

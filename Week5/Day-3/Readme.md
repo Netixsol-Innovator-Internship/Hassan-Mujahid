@@ -1,6 +1,6 @@
 # Grocery App
 
-This project is a Grocery App Schema, built using Mongoose. It provides schemas to manage different entities such as Buyers, Owners, Stores, Products(Added Image), and Orders. These schemas define the structure of the data and ensure seamless interaction with a MongoDB database.
+This project is a Grocery App Schema, built using Mongoose. It provides schemas to manage different entities such as Buyers, Owners, Stores, Products, Orders, and Images. These schemas define the structure of the data and ensure seamless interaction with a MongoDB database.
 
 ---
 
@@ -14,6 +14,7 @@ This project is a Grocery App Schema, built using Mongoose. It provides schemas 
    - [Owner Schema](#owner-schema)
    - [Product Schema](#product-schema)
    - [Store Schema](#store-schema)
+   - [Image Schema](#image-schema)
 
 ---
 
@@ -23,7 +24,8 @@ This project is a Grocery App Schema, built using Mongoose. It provides schemas 
 - **Owner Management**: Owners can register, manage stores, and add products.
 - **Store Management**: Each store is linked to an owner and can have multiple products.
 - **Order Management**: Orders contain items from the buyer's cart and are linked to a specific buyer.
-- **Product Management**: Products are linked to stores and can be managed by the store owner.
+- **Product Management**: Products are linked to stores, can have associated images, and can be managed by the store owner.
+- **Image Management**: Images are stored with details like path, size, and MIME type and are linked to products.
 
 ---
 
@@ -73,23 +75,33 @@ const orderSchema = Schema({
       },
     },
   ],
+  status: {
+    type: String,
+    default: "Pending",
+    enum: ["Pending", "Completed", "Canceled"],
+  },
   user: {
     _id: {
       type: mongoose.SchemaTypes.ObjectId,
       required: true,
       ref: "Buyer",
     },
-    name: {
-      type: String,
-      required: true,
-    },
+    ref: "User",
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
+
+module.exports = mongoose.model("Order", orderSchema);
 ```
 
 - **Fields**:
   - `items`: Array of products and their quantities.
-  - `user`: Contains buyer's ID and name.
+  - `status`: Status of the order (`Pending` by default, options are `Pending`, `Completed`, and `Canceled`).
+  - `user`: Contains buyer's ID and a reference to the user.
+  - `createdAt`: Timestamp of order creation.
 
 ---
 
@@ -140,7 +152,7 @@ const productSchema = Schema({
     required: true,
   },
   price: {
-    type: String,
+    type: Number,
     required: true,
   },
   stock: {
@@ -153,14 +165,16 @@ const productSchema = Schema({
     ref: "Store",
   },
   Image: {
-    data: Buffer,
-    ContentType: String,
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Image",
   },
   createdAt: {
     type: Date,
     default: Date.now,
   },
 });
+
+module.exports = mongoose.model("Product", productSchema);
 ```
 
 - **Fields**:
@@ -168,7 +182,7 @@ const productSchema = Schema({
   - `price`: Product price (required).
   - `stock`: Quantity available in stock (required).
   - `storeId`: Reference to the store selling this product.
-  - `Image`: Handle and store uploaded image from the device in database.
+  - `Image`: Reference to the image associated with this product.
   - `createdAt`: Timestamp of product creation.
 
 ---
@@ -202,5 +216,42 @@ const storeSchema = Schema({
   - `address`: Store location (required).
   - `ownerId`: Reference to the owner of this store.
   - `createdAt`: Timestamp of store creation.
+
+---
+
+### Image Schema
+
+```javascript
+const imageSchema = new Schema({
+  originalName: {
+    type: String, // Original file name
+    required: true,
+  },
+  path: {
+    type: String, // File path or URL
+    required: true,
+  },
+  ContentType: {
+    type: String, // MIME type (e.g., "image/jpeg")
+    required: true,
+  },
+  size: {
+    type: Number, // File size in bytes
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+module.exports = mongoose.model("Image", imageSchema);
+```
+
+- **Fields**:
+  - `originalName`: The original name of the uploaded file (required).
+  - `path`: File path or URL where the image is stored (required).
+  - `ContentType`: The MIME type of the image (e.g., "image/jpeg") (required).
+  - `size`: Size of the file in bytes.
+  - `createdAt`: Timestamp of image creation.
 
 ---

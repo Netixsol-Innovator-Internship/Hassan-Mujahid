@@ -6,8 +6,8 @@ const {
   removeTransaction,
 } = require("../Controllers/transaction");
 
-router.route("/").get(getTransaction).post(addTransaction);
-
-router.route("/:id").delete(removeTransaction);
+router.get("/", getTransaction);
+router.post("/add", addTransaction);
+router.route("/delete/:id").delete(removeTransaction);
 
 module.exports = router;

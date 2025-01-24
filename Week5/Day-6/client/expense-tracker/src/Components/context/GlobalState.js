@@ -15,7 +15,7 @@ export const GlobalProvider = ({ children }) => {
 
   const getTransactions = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/v1/transaction");
+      const res = await axios.get("https://expense-server-kappa.vercel.app/");
       dispatch({
         type: "GET_TRANSACTION",
         payload: res.data.data,
@@ -25,12 +25,15 @@ export const GlobalProvider = ({ children }) => {
         type: "TRANSACTION_ERROR",
         payload: err.response.data.error,
       });
+      console.log(err);
     }
   };
 
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/transaction/${id}`);
+      await axios.delete(
+        `https://expense-server-kappa.vercel.app/delete/${id}`
+      );
       dispatch({
         type: "DELETE_TRANSACTION",
         payload: id,
@@ -49,7 +52,7 @@ export const GlobalProvider = ({ children }) => {
     };
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/transaction",
+        "https://expense-server-kappa.vercel.app/add",
         transaction,
         config
       );
@@ -63,6 +66,7 @@ export const GlobalProvider = ({ children }) => {
         type: "TRANSACTION_ERROR",
         payload: err.response.data.error,
       });
+      console.log(err);
     }
   };
 

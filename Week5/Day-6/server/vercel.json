@@ -1,18 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "app.js"
-    }
-  ],
-  "env": {
-    "MONGODB_URI": "mongodb+srv://Hassan:Txsrpr4LtvAMkysz@cluster0.b8vct.mongodb.net/expense-tracker?retryWrites=true&w=majority&appName=Cluster0"
-  }
+  "builds": [{ "src": "api/index.js", "use": "@vercel/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "api/index.js" }],
+  "outputDirectory": "dist"
 }

@@ -1,5 +1,6 @@
 import { type ReactNode } from "react";
 import type { Metadata } from "next";
+import { Toaster } from "@/components/ui/toaster";
 import { Work_Sans } from "next/font/google";
 import "easymde/dist/easymde.min.css";
 import "./globals.css";
@@ -22,7 +23,10 @@ type layoutProp = {
 export default function RootLayout({ children }: layoutProp) {
   return (
     <html lang="en">
-      <body className={workSans.variable}>{children}</body>
+      <body className={workSans.variable}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

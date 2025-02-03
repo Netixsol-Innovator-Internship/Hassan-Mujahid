@@ -42,7 +42,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           <p className="text-30-bold">
             {session?.id === id ? "Your" : "All"} Startups
           </p>
-          <ul className="card_grid_sm">
+          <ul className="card_grid-sm">
             <Suspense fallback={<StartupSkeleton />}>
               <UserStartups id={id} />
             </Suspense>

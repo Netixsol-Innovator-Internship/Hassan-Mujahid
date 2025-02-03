@@ -47,8 +47,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           alt="thumbnail"
           className="w-full h-auto rounded-xl"
         />
-        <div className="space-y-5 mt-10 max-w-4xl mx-auto">
-          <div className="flex-between gap-5">
+        <div className="space-y-5 mt-10 max-w-4xl mx-auto ">
+          <div className="flex-between max-sm:flex-col gap-5">
             <Link
               href={`/user/${post?.author?._id}`}
               className="flex gap-2 items-center mb-3"
@@ -67,8 +67,10 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
                 </p>
               </div>
             </Link>
+
             <p className="category-tag">{post.category}</p>
           </div>
+
           <h3 className="text-30-bold">Pitch Details</h3>
           {parsedMd ? (
             <article

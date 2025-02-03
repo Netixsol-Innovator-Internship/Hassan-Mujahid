@@ -4,6 +4,7 @@ import { auth, signIn, signOut } from "@/auth";
 import { BadgePlus, LogOut } from "lucide-react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
+import logo from "../Public/logo.png";
 
 const Navbar = async () => {
   const session = await auth();
@@ -12,7 +13,7 @@ const Navbar = async () => {
     <header className="px-5 py-3 bg-white shadow-sm font-work-sans">
       <nav className="flex justify-between items-center">
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={144} height={30} />
+          <Image src={logo} alt="logo" width={144} height={30} />
         </Link>
         <div className="flex justify-center items-center gap-5">
           {session && session?.user ? (

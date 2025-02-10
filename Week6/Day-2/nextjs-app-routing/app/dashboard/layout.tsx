@@ -19,6 +19,6 @@ export default function Layout({
           {stats}
         </div>
       </div>
-    </>
+    </> //This is the layout page the wraps all the rendered pages inside the dashboard folder and can be used to add common elements to all the pages
   );
 }

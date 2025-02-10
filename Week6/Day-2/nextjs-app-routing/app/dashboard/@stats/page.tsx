@@ -3,7 +3,8 @@ const waitFor = (sec: number) =>
 
 const userPage = async () => {
   await waitFor(12);
-  return <h1>stats page</h1>;
+  return <h1>stats page</h1>; //This is the page that get's rendered automatically by NEXTJS App router when we are http://localhost:3000/dashboard
+  //As we are using parallel routes in this case the path would not be http://localhost:3000/dashboard/stats
 };
 
 export default userPage;

@@ -15,7 +15,7 @@ const ProductPage = () => {
           <li>Product 3</li>
         </Link>
       </ul>
-    </div>
+    </div> //Link from next/Link are used to navigate between pages withoutt reloading the site
   );
 };
 

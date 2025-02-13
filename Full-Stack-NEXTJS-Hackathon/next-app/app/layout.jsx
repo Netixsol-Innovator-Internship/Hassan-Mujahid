@@ -7,10 +7,10 @@ import { SessionProvider } from "next-auth/react";
 
 import "./globals.css";
 
-const Robotto = Roboto({
-  variable: "--font-roboto",
+const roboto = Roboto({
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
-  weight: ["100", "300", "400", "500", "700", "900"],
+  display: "swap",
 });
 
 export const metadata = {
@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${Robotto.variable} `} suppressHydrationWarning>
+      <body className={`${roboto.variable} `} suppressHydrationWarning>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <SessionProvider>

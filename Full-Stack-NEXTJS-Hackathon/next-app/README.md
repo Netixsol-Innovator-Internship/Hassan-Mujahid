@@ -199,4 +199,4 @@ vercel deploy
 
 ## 👥 Authors
 
-Live-site: [Live-site](https://next-bmn0hro4j-hassan-mujahids-projects.vercel.app/)
+Live-site: [Live-site](https://next-app-seven-sand.vercel.app/)

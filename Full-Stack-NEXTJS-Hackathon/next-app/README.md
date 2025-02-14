@@ -1,36 +1,210 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# News App with Next.js and NextAuth
 
-## Getting Started
+A modern news application built with Next.js 15, featuring user authentication, password reset functionality, and real-time news updates using external APIs.
 
-First, run the development server:
+## 🚀 Features
+
+- **User Authentication**
+
+  - Email/Password Sign Up & Sign In
+  - Google OAuth Integration
+  - Password Reset Flow
+  - Protected Routes
+
+- **News Integration**
+
+  - Real-time News Updates
+  - Category-based Filtering
+  - Search Functionality
+  - Responsive News Cards
+
+- **Modern UI**
+  - Material-UI Components
+  - Responsive Design
+  - Tailwind CSS Integration
+
+## 🛠️ Tech Stack
+
+- **Frontend**
+
+  - Next.js 15 (App Router)
+  - Material-UI
+  - Tailwind CSS
+  - NextAuth.js
+
+- **Backend**
+
+  - Next.js API Routes
+  - MongoDB
+  - Mongoose
+
+- **Authentication**
+  - NextAuth.js
+  - Google OAuth
+  - JWT Tokens
+  - Bcrypt for Password Hashing
+
+## 📦 Installation
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/news-app.git
+cd news-app
+```
+
+2. **Install dependencies**
+
+```bash
+npm install
+```
+
+3. **Environment Setup**
+   Create a `.env.local` file in the root directory:
+
+```env
+# App
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your-nextauth-secret
+
+# MongoDB
+MONGODB_URI=your-mongodb-uri
+
+# Google OAuth
+GOOGLE_ID=your-google-client-id
+GOOGLE_SECRET=your-google-client-secret
+
+# News API
+NEWS_API_KEY=your-news-api-key
+```
+
+4. **Start the development server**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔐 Authentication Flow
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Email/Password Authentication
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Sign Up**
 
-## Learn More
+   - User submits email and password
+   - Password is hashed using bcrypt
+   - User data is stored in MongoDB
+   - Verification email is sent
 
-To learn more about Next.js, take a look at the following resources:
+2. **Sign In**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   - User provides credentials
+   - Server validates credentials
+   - JWT token is generated
+   - User is redirected to dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Password Reset**
+   - User requests password reset
+   - Reset token is generated and stored
+   - Reset link is sent to email
+   - User sets new password using token
 
-## Deploy on Vercel
+### Google OAuth
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. User clicks "Sign in with Google"
+2. Redirected to Google consent screen
+3. Google returns user data
+4. Account is created/updated in database
+5. User is signed in automatically
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🔄 API Integration
+
+### News API
+
+```javascript
+// Example API call
+const fetchNews = async (category = "all") => {
+  const res = await fetch(`/api/news?category=${category}`);
+  return res.json();
+};
+```
+
+### Authentication API Routes
+
+```javascript
+// Sign Up
+POST / api / auth / signup;
+Body: {
+  name, email, password;
+}
+
+// Password Reset Request
+POST / api / auth / forgot - password;
+Body: {
+  email;
+}
+
+// Password Reset
+POST / api / auth / reset - password;
+Body: {
+  token, password;
+}
+```
+
+## 🔒 Protected Routes
+
+Protected routes are handled using Next.js middleware:
+
+```javascript
+// middleware.js
+export { default } from "next-auth/middleware";
+
+export const config = {
+  matcher: ["/dashboard/:path*"],
+};
+```
+
+## 🎨 Styling
+
+The app uses a combination of Material-UI and Tailwind CSS:
+
+```javascript
+// theme.js
+const theme = createTheme({
+  typography: {
+    fontFamily: roboto.style.fontFamily,
+    // ... other typography settings
+  },
+  palette: {
+    primary: {
+      main: "#37b24d",
+    },
+    // ... other palette settings
+  },
+});
+```
+
+## 📱 Responsive Design
+
+The app is fully responsive and works on all screen sizes:
+
+- Mobile-first approach
+- Responsive navigation
+- Adaptive news cards
+- Flexible layouts
+
+## 🚀 Deployment
+
+1. **Vercel Deployment**
+
+```bash
+vercel deploy
+```
+
+2. **Environment Variables**
+   - Set all environment variables in Vercel dashboard
+   - Enable automatic deployments
+   - Configure custom domains if needed
+
+## 👥 Authors
+
+Live-site: [Live-site](https://next-bmn0hro4j-hassan-mujahids-projects.vercel.app/)

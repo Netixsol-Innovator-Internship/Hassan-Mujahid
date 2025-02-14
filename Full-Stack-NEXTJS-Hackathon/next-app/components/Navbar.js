@@ -31,33 +31,70 @@ const Navbar = () => {
               gap: 4,
             }}
           >
-            <Link href={"/"}>
-              <div className="font-bold text-2xl">News</div>
+            <Link
+              href="/"
+              style={{
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              <Box
+                component="span"
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "1.5rem",
+                  lineHeight: "2rem",
+                  color: "white",
+                  "&:hover": {
+                    opacity: 0.9,
+                  },
+                }}
+              >
+                News
+              </Box>
             </Link>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {!session ? (
-              <Link href={"/sign-in"}>
-                <Button color="inherit">Sign In</Button>
+              <Link
+                href="/sign-in"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Button
+                  color="inherit"
+                  sx={{
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    },
+                  }}
+                >
+                  Sign In
+                </Button>
               </Link>
             ) : (
-              <Link href={"/"}>
-                <Button color="inherit" onClick={handleSignOut}>
+              <Link
+                href="/"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <Button
+                  color="inherit"
+                  onClick={handleSignOut}
+                  sx={{
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "rgba(255, 255, 255, 0.1)",
+                    },
+                  }}
+                >
                   Sign Out
                 </Button>
               </Link>
             )}
-            {/* <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{
-                display: { xs: "inline-flex", md: "none" },
-              }}
-            >
-              <MenuIcon />
-            </IconButton> */}
           </Box>
         </Toolbar>
       </AppBar>

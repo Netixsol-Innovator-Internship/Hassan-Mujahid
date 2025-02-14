@@ -49,7 +49,7 @@ A modern news application built with Next.js 15, featuring user authentication, 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/news-app.git
+git clone https://github.com/Netixsol-Innovator-Internship/Hassan-Mujahid/tree/main/Full-Stack-NEXTJS-Hackathon/next-app
 cd news-app
 ```
 

@@ -108,14 +108,6 @@ npm run dev
    - Reset link is sent to email
    - User sets new password using token
 
-### Google OAuth
-
-1. User clicks "Sign in with Google"
-2. Redirected to Google consent screen
-3. Google returns user data
-4. Account is created/updated in database
-5. User is signed in automatically
-
 ## 🔄 API Integration
 
 ### News API

@@ -71,62 +71,79 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     async signIn({ user, account, profile }) {
       if (account.provider === "google") {
         try {
-          // Check if user already exists
-          const existingUser = await User.findOne({ email: profile.email });
+          await dbConnect();
+          const email = profile.email.toLowerCase();
 
-          if (!existingUser) {
-            // Generate a random password for Google users
-            const randomPassword = Math.random().toString(36).slice(-8);
-            const hashedPassword = await saltAndHashPassword(randomPassword);
+          // Find existing user
+          let dbUser = await User.findOne({ email });
 
-            // Create new user with custom fields
-            const newUser = await User.create({
-              email: profile.email,
-              username: profile.email.split("@")[0], // Create username from email
-              password: hashedPassword,
-              // You can add more custom fields here
+          if (!dbUser) {
+            // First time sign in - create new user
+            dbUser = await User.create({
+              email,
+              username: email.split("@")[0],
+              googleId: profile.sub,
+              providers: ["google"],
+              emailVerified: new Date(),
+              name: profile.name, // Optional: store name from Google
+              image: profile.picture, // Optional: store profile picture
             });
-
-            // Update the user object that will be saved in the session
-            user.id = newUser._id;
-            user.username = newUser.username;
-            delete user.name; // Remove default name field
-            delete user.image; // Remove default image field
           } else {
-            // If user exists, update the user object for the session
-            user.id = existingUser._id;
-            user.username = existingUser.username;
-            delete user.name;
-            delete user.image;
+            // Existing user - update Google info
+            await User.findByIdAndUpdate(dbUser._id, {
+              $set: {
+                googleId: profile.sub,
+              },
+              $addToSet: {
+                providers: "google",
+              },
+            });
           }
+
+          // Update the user object that will be saved in the token
+          user.id = dbUser._id;
+          user.email = dbUser.email;
+          user.username = dbUser.username;
+
+          return true;
         } catch (error) {
           console.error("Google sign in error:", error);
-          return false; // Return false to prevent sign in on error
+          return false;
         }
       }
       return true;
     },
-    async session({ session, token }) {
-      // Add user info to session
-      if (token) {
-        session.user.id = token.sub;
-        session.user.username = token.username;
 
-        delete session.user.name;
-        delete session.user.image;
-      }
-      return session;
-    },
-    async jwt({ token, user }) {
-      // Add user info to token
+    async jwt({ token, user, account }) {
       if (user) {
+        // Add user info to token on first sign in
+        token.id = user.id;
         token.username = user.username;
-        token.email = user.email;
-
-        delete token.name;
-        delete token.picture;
       }
       return token;
     },
+
+    async session({ session, token }) {
+      if (session?.user) {
+        // Add user info to session
+        session.user.id = token.id;
+        session.user.username = token.username;
+
+        // Optionally fetch latest user data
+        const user = await User.findById(token.id);
+        if (user) {
+          session.user.providers = user.providers;
+        }
+      }
+      return session;
+    },
   },
+  pages: {
+    signIn: "/sign-in",
+  },
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  allowDangerousEmailAccountLinking: true,
 });

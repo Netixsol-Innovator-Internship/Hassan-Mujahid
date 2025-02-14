@@ -145,10 +145,10 @@ export default function SignUp() {
             </Button>
           </Box>
 
-          <Divider sx={{ my: 2 }}>OR</Divider>
+          {/* <Divider sx={{ my: 2 }}>OR</Divider>
 
           {/* Google Sign In */}
-          <Box sx={{ textAlign: "center" }}>
+          {/* <Box sx={{ textAlign: "center" }}>
             <Button
               variant="outlined"
               onClick={handleGoogleSignIn}
@@ -164,7 +164,7 @@ export default function SignUp() {
             >
               Sign up with Google
             </Button>
-          </Box>
+          </Box> */}
 
           <Box sx={{ mt: 2, textAlign: "center" }}>
             <Typography variant="body2" color="text.secondary">

@@ -14,11 +14,12 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import GoogleIcon from "@mui/icons-material/Google";
 
 export default function SignIn() {
   const router = useRouter();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -141,10 +142,10 @@ export default function SignIn() {
             </Button>
           </Box>
 
-          <Divider sx={{ my: 2 }}>OR</Divider>
+          {/* <Divider sx={{ my: 2 }}>OR</Divider> 
 
           {/* Google Sign In */}
-          <Box sx={{ textAlign: "center" }}>
+          {/*  <Box sx={{ textAlign: "center" }}>
             <Button
               variant="outlined"
               onClick={handleGoogleSignIn}
@@ -160,7 +161,7 @@ export default function SignIn() {
             >
               Sign in with Google
             </Button>
-          </Box>
+          </Box> */}
 
           <Box sx={{ mt: 2, textAlign: "center" }}>
             <Typography variant="body2" color="text.secondary">

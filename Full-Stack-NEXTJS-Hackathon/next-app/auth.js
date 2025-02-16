@@ -116,6 +116,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
     async jwt({ token, user, account }) {
       if (user) {
+        await dbConnect();
         // Add user info to token on first sign in
         token.id = user.id;
         token.username = user.username;
@@ -125,6 +126,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
     async session({ session, token }) {
       if (session?.user) {
+        await dbConnect();
         // Add user info to session
         session.user.id = token.id;
         session.user.username = token.username;

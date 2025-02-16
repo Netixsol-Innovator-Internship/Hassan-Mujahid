@@ -16,6 +16,7 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import GoogleIcon from "@mui/icons-material/Google";
+import { validatePassword } from "../../../utils/validation";
 
 export default function SignUp() {
   const router = useRouter();
@@ -25,6 +26,8 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+  const [validationErrors, setValidationErrors] = useState([]);
+
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
@@ -33,6 +36,15 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setIsLoading(true);
+      setValidationErrors([]);
+
+      const { isValid, errors } = validatePassword(formData.password);
+      if (!isValid) {
+        setValidationErrors(errors);
+        setIsLoading(false);
+        return;
+      }
+
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -183,6 +195,15 @@ export default function SignUp() {
           {successMessage && (
             <Alert severity="success" sx={{ mt: 2 }}>
               {successMessage}
+            </Alert>
+          )}
+          {validationErrors.length > 0 && (
+            <Alert severity="warning">
+              <ul className="list-disc pl-4">
+                {validationErrors.map((err, index) => (
+                  <li key={index}>{err}</li>
+                ))}
+              </ul>
             </Alert>
           )}
         </CardContent>

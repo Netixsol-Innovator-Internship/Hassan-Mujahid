@@ -4,6 +4,7 @@ import User from "../../../../models/users";
 import ResetToken from "../../../../models/ResetToken";
 import { saltAndHashPassword } from "../../../../utils/password";
 import { sendEmail } from "../../../../lib/mail";
+import mongoose from "mongoose";
 
 export async function POST(req) {
   try {
@@ -36,7 +37,9 @@ export async function POST(req) {
     });
 
     // Delete used token
-    await ResetToken.deleteOne({ _id: resetToken._id });
+    await ResetToken.deleteOne({
+      _id: new mongoose.Types.ObjectId(resetToken._id),
+    });
 
     // Send confirmation email
     await sendEmail({

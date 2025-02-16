@@ -126,6 +126,11 @@ export default function SignIn() {
               disabled={isLoading || isGoogleLoading}
               error={!!error}
             />
+            <Link href="/forgot-password">
+              <span className="text-sm text-gray-500 flex justify-end">
+                Forgot Password?
+              </span>
+            </Link>
 
             <Button
               type="submit"

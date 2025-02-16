@@ -7,7 +7,6 @@ A modern news application built with Next.js 15, featuring user authentication, 
 - **User Authentication**
 
   - Email/Password Sign Up & Sign In
-  - Google OAuth Integration
   - Password Reset Flow
   - Protected Routes
 
@@ -40,7 +39,6 @@ A modern news application built with Next.js 15, featuring user authentication, 
 
 - **Authentication**
   - NextAuth.js
-  - Google OAuth
   - JWT Tokens
   - Bcrypt for Password Hashing
 
@@ -65,17 +63,23 @@ npm install
 ```env
 # App
 NEXTAUTH_URL=http://localhost:3000
-NEXTAUTH_SECRET=your-nextauth-secret
+AUTH_SECRET=your-nextauth-secret
 
 # MongoDB
 MONGODB_URI=your-mongodb-uri
 
-# Google OAuth
-GOOGLE_ID=your-google-client-id
-GOOGLE_SECRET=your-google-client-secret
-
 # News API
-NEWS_API_KEY=your-news-api-key
+NEXT_PUBLIC_NEWS_API_KEY=your-news-api-key
+```
+
+# Password-Reset
+
+```env
+EMAIL_SERVER_HOST=smtp.your-email-host
+EMAIL_SERVER_PORT=your-email-port
+EMAIL_SERVER_USER=your-email-user
+EMAIL_SERVER_PASSWORD=your-email-password
+EMAIL_FROM=your-email-from
 ```
 
 4. **Start the development server**
@@ -93,7 +97,7 @@ npm run dev
    - User submits email and password
    - Password is hashed using bcrypt
    - User data is stored in MongoDB
-   - Verification email is sent
+   - User is redirected to sign-in page
 
 2. **Sign In**
 
@@ -126,7 +130,7 @@ const fetchNews = async (category = "all") => {
 // Sign Up
 POST / api / auth / signup;
 Body: {
-  name, email, password;
+  username, email, password;
 }
 
 // Password Reset Request
@@ -151,7 +155,7 @@ Protected routes are handled using Next.js middleware:
 export { default } from "next-auth/middleware";
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ["/sign-up", "/sign-in"],
 };
 ```
 

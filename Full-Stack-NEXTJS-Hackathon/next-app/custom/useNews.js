@@ -25,7 +25,7 @@ export function useNews({
   pageSize = 12,
   category = "general",
   searchQuery = "",
-  sortBy = "publishedAt_desc",
+  sortBy = "publishedAt",
   fromDate = null,
   toDate = null,
 }) {
@@ -100,10 +100,22 @@ export function useNews({
 
   const cacheKey = url.toString();
 
-  const { data, error, isLoading } = useSWR(cacheKey, fetcher, {
+  const { data, error, isLoading, mutate } = useSWR(cacheKey, fetcher, {
     revalidateOnFocus: false,
-    revalidateOnReconnect: true,
+    revalidateOnReconnect: false,
+    dedupingInterval: 600000, // 10 minutes
+    shouldRetryOnError: false,
   });
+
+  // const { data, error, isLoading } = useSWR(cacheKey, fetcher, {
+  //   revalidateOnFocus: false,
+  //   revalidateOnReconnect: true,
+  // });
+
+  // Reset articles when search or filters change
+  useEffect(() => {
+    setArticles([]);
+  }, [searchQuery, category, sortBy, fromDate, toDate]);
 
   // Update articles when data changes
   useEffect(() => {
@@ -117,17 +129,8 @@ export function useNews({
     }
   }, [data, page]);
 
-  // Reset articles when search or filters change
-  useEffect(() => {
-    setArticles([]);
-  }, [searchQuery, category, sortBy, fromDate, toDate]);
-
-  const sortedArticles = sortBy.endsWith("_asc")
-    ? [...articles].reverse()
-    : articles;
-
   return {
-    news: sortedArticles,
+    news: articles,
     totalResults: data?.totalResults || 0,
     isLoading: isLoading && page === 1,
     isLoadingMore: isLoading && page > 1,

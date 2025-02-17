@@ -22,7 +22,7 @@ export default function NewsDashboard() {
     page: 1,
     searchQuery: "",
     category: "all",
-    sortBy: "publishedAt",
+    sortBy: "publishedAt_desc",
     fromDate: null,
     toDate: null,
   });
@@ -131,7 +131,10 @@ export default function NewsDashboard() {
         <div>
           {isError ? (
             <Alert severity="error">
-              {isError.message || "Error loading news. Please try again later."}
+              {isError.message ===
+              "Requests from the browser are not allowed on the Developer plan, except from localhost."
+                ? "Error loading news. Please try again later."
+                : isError.message}
             </Alert>
           ) : (
             <>
@@ -160,20 +163,26 @@ export default function NewsDashboard() {
                       No more news to load.
                     </Typography>
                   }
+                  style={{ overflow: "visible" }} // Add this to prevent scrollbar issues
                 >
-                  <Grid container spacing={3}>
+                  <Box
+                    sx={{
+                      display: "grid",
+                      gridTemplateColumns:
+                        "repeat(auto-fill, minmax(300px, 1fr))",
+                      gap: 3,
+                      width: "100%",
+                      "& > *": {
+                        minWidth: 0, // Prevents cards from overflowing
+                      },
+                    }}
+                  >
                     {news.map((article, index) => (
-                      <Grid
-                        xs={12}
-                        sm={6}
-                        md={4}
-                        lg={3}
-                        key={`${article.url}-${index}`}
-                      >
+                      <Box key={`${article.url}-${index}`}>
                         <NewsCard article={article} />
-                      </Grid>
+                      </Box>
                     ))}
-                  </Grid>
+                  </Box>
                 </InfiniteScroll>
               )}
 

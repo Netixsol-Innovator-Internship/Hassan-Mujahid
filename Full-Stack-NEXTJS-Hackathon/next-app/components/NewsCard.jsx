@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   Card,
@@ -9,28 +9,29 @@ import {
   Button,
   Skeleton,
   Box,
-} from '@mui/material';
-import { useState } from 'react';
-import AccessTimeIcon from '@mui/icons-material/AccessTime';
+  Chip,
+} from "@mui/material";
+import { useState } from "react";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 export default function NewsCard({ article }) {
   const [imageError, setImageError] = useState(false);
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    const options = { year: "numeric", month: "short", day: "numeric" };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
   return (
-    <Card 
+    <Card
       elevation={2}
-      sx={{ 
-        height: '100%', 
-        display: 'flex', 
-        flexDirection: 'column',
-        transition: 'transform 0.2s ease-in-out',
-        '&:hover': {
-          transform: 'translateY(-4px)',
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        transition: "transform 0.2s ease-in-out",
+        "&:hover": {
+          transform: "translateY(-4px)",
         },
       }}
     >
@@ -41,49 +42,49 @@ export default function NewsCard({ article }) {
           image={article.urlToImage}
           alt={article.title}
           onError={() => setImageError(true)}
-          sx={{ objectFit: 'cover' }}
+          sx={{ objectFit: "cover" }}
         />
       ) : (
         <Skeleton variant="rectangular" height={200} />
       )}
 
       <CardContent sx={{ flexGrow: 1 }}>
-        <Typography 
-          gutterBottom 
-          variant="h6" 
-          component="h2" 
+        <Typography
+          gutterBottom
+          variant="h6"
+          component="h2"
           sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
             WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
+            WebkitBoxOrient: "vertical",
           }}
         >
           {article.title}
         </Typography>
-        
-        <Typography 
-          variant="body2" 
+
+        <Typography
+          variant="body2"
           color="text.secondary"
           sx={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            display: "-webkit-box",
             WebkitLineClamp: 3,
-            WebkitBoxOrient: 'vertical',
-            mb: 2
+            WebkitBoxOrient: "vertical",
+            mb: 2,
           }}
         >
           {article.description}
         </Typography>
 
-        <Box 
-          sx={{ 
-            display: 'flex', 
-            alignItems: 'center',
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
             gap: 1,
-            color: 'text.secondary'
+            color: "text.secondary",
           }}
         >
           <AccessTimeIcon fontSize="small" />
@@ -94,8 +95,8 @@ export default function NewsCard({ article }) {
       </CardContent>
 
       <CardActions>
-        <Button 
-          size="small" 
+        <Button
+          size="small"
           color="primary"
           href={article.url}
           target="_blank"

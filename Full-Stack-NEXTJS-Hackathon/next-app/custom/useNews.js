@@ -25,7 +25,7 @@ export function useNews({
   pageSize = 12,
   category = "general",
   searchQuery = "",
-  sortBy = "publishedAt",
+  sortBy = "publishedAt_desc",
   fromDate = null,
   toDate = null,
 }) {
@@ -59,11 +59,34 @@ export function useNews({
     url.searchParams.append("q", finalQuery);
 
     // Add sorting
-    url.searchParams.append("sortBy", sortBy);
+    const [sortField, sortOrder] = sortBy.split("_");
+    url.searchParams.append("sortBy", sortField);
+    if (sortOrder === "asc") {
+      // If ascending order is requested, we'll reverse the date range
+      // and use descending order (News API only supports desc)
+      if (fromDate && toDate) {
+        const temp = fromDate;
+        fromDate = toDate;
+        toDate = temp;
+      }
+    }
 
     // Add date filters
-    if (fromDate) url.searchParams.append("from", `${fromDate}T00:00:00`);
-    if (toDate) url.searchParams.append("to", `${toDate}T23:59:59`);
+    if (fromDate) {
+      const fromDateTime = new Date(fromDate);
+      // Set to start of day in UTC
+      fromDateTime.setUTCHours(0, 0, 0, 0);
+      url.searchParams.append("from", fromDateTime.toISOString());
+    }
+
+    if (toDate) {
+      const toDateTime = new Date(toDate);
+      // Set to start of next day in UTC and subtract 1 millisecond
+      toDateTime.setDate(toDateTime.getDate());
+      toDateTime.setUTCHours(0, 0, 0, 0);
+      toDateTime.setMilliseconds(-1);
+      url.searchParams.append("to", toDateTime.toISOString());
+    }
 
     // Add language parameter
     url.searchParams.append("language", "en");
@@ -99,8 +122,12 @@ export function useNews({
     setArticles([]);
   }, [searchQuery, category, sortBy, fromDate, toDate]);
 
+  const sortedArticles = sortBy.endsWith("_asc")
+    ? [...articles].reverse()
+    : articles;
+
   return {
-    news: articles,
+    news: sortedArticles,
     totalResults: data?.totalResults || 0,
     isLoading: isLoading && page === 1,
     isLoadingMore: isLoading && page > 1,

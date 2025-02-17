@@ -27,6 +27,15 @@ export default function CategoryFilter({ value, onChange }) {
             px: 3,
             py: 1,
           },
+          // Hide scroll buttons when they're disabled
+          "& .MuiTabs-scrollButtons.Mui-disabled": {
+            display: "none",
+          },
+          // Ensure proper spacing when buttons are visible
+          "& .MuiTabs-scrollButtons": {
+            width: "auto",
+            flexShrink: 0,
+          },
         }}
       >
         {categories.map((category) => (

@@ -38,7 +38,7 @@ export async function POST(req) {
 
     // Delete used token
     await ResetToken.deleteOne({
-      _id: new mongoose.Types.ObjectId(resetToken._id),
+      _id: new mongoose.SchemaTypes.ObjectId(resetToken._id),
     });
 
     // Send confirmation email

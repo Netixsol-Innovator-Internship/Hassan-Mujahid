@@ -151,7 +151,7 @@ export default function NewsDashboard() {
             <Alert severity="error">
               {isError.message ===
               "Requests from the browser are not allowed on the Developer plan, except from localhost."
-                ? "Error loading news. Please try again later."
+                ? "No news found. As this is a free plan, and it only allowed while developing"
                 : isError.message}
             </Alert>
           ) : (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Grid from "@mui/material/Grid2";
 import {
   Container,
@@ -26,17 +26,11 @@ export default function NewsDashboard() {
     fromDate: null,
     toDate: null,
   });
+  const [hasMore, setHasMore] = useState(true);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-  const {
-    news,
-    totalResults,
-    isLoading,
-    isLoadingMore,
-    isError,
-    isEverythingEndpoint,
-  } = useNews(filters);
-
-  const hasMore = news.length < totalResults;
+  const { news, totalResults, isLoading, isError, isEverythingEndpoint } =
+    useNews(filters);
 
   const handleSearch = useCallback((query) => {
     setFilters((prev) => ({
@@ -78,14 +72,38 @@ export default function NewsDashboard() {
     }));
   };
 
+  // Update hasMore based on totalResults
+  useEffect(() => {
+    setHasMore(news.length < totalResults);
+  }, [news.length, totalResults]);
+
   const loadMore = useCallback(() => {
-    if (!isLoadingMore) {
+    if (!isLoadingMore && news.length < totalResults) {
+      setIsLoadingMore(true);
       setFilters((prev) => ({
         ...prev,
         page: prev.page + 1,
       }));
     }
-  }, [isLoadingMore]);
+  }, [isLoadingMore, news.length, totalResults]);
+
+  // Reset states when filters change
+  useEffect(() => {
+    setHasMore(true);
+    setIsLoadingMore(false);
+    setFilters((prev) => ({ ...prev, page: 1 }));
+  }, [
+    filters.category,
+    filters.searchQuery,
+    filters.sortBy,
+    filters.fromDate,
+    filters.toDate,
+  ]);
+
+  // Reset isLoadingMore when new data is loaded
+  useEffect(() => {
+    setIsLoadingMore(false);
+  }, [news]);
 
   return (
     <Container maxWidth="xl" sx={{ py: 4 }}>
@@ -148,22 +166,34 @@ export default function NewsDashboard() {
                   next={loadMore}
                   hasMore={hasMore}
                   loader={
-                    <Box
-                      sx={{ display: "flex", justifyContent: "center", p: 3 }}
-                    >
-                      <CircularProgress />
-                    </Box>
+                    isLoadingMore && hasMore ? (
+                      <Box
+                        sx={{ display: "flex", justifyContent: "center", p: 3 }}
+                      >
+                        <CircularProgress />
+                      </Box>
+                    ) : (
+                      <Typography
+                        textAlign="center"
+                        color="text.secondary"
+                        sx={{ mt: 4 }}
+                      >
+                        No more news to load.
+                      </Typography>
+                    )
                   }
                   endMessage={
-                    <Typography
-                      textAlign="center"
-                      color="text.secondary"
-                      sx={{ mt: 4 }}
-                    >
-                      No more news to load.
-                    </Typography>
+                    news.length > 0 && !hasMore ? (
+                      <Typography
+                        textAlign="center"
+                        color="text.secondary"
+                        sx={{ mt: 4 }}
+                      >
+                        No more news to load.
+                      </Typography>
+                    ) : null
                   }
-                  style={{ overflow: "visible" }} // Add this to prevent scrollbar issues
+                  style={{ overflow: "visible" }}
                 >
                   <Box
                     sx={{

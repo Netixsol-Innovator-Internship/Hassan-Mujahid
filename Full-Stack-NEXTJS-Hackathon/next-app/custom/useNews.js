@@ -125,7 +125,6 @@ export function useNews({
       } else {
         setArticles((prev) => [...prev, ...data.articles]);
       }
-      setIsLoadingMore(false);
     }
   }, [data, page]);
 
@@ -133,7 +132,6 @@ export function useNews({
     news: articles,
     totalResults: data?.totalResults || 0,
     isLoading: isLoading && page === 1,
-    isLoadingMore: isLoading && page > 1,
     isError: error,
     isEverythingEndpoint: useEverythingEndpoint,
   };
